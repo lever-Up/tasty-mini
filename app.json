@@ -1,0 +1,78 @@
+{
+  "usingComponents": {
+    "product-list-card": "components/product_list_card/product_list_card",
+    "nav-bar": "components/nav_bar/nav_bar",
+    "ticket-card": "components/ticket_card/ticket_card"
+  },
+  "pages":[
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/friends/friends",
+    "pages/menu/menu",
+    "pages/me/me",
+    "pages/search/search"
+  ],
+  "subpackages": [
+    {
+      "root": "pages_buy",
+      "pages": [
+        "group_buying/group_buying"
+      ]
+    },
+    {
+      "root": "pages_news",
+      "pages": [
+        "live_broadcast/live_broadcast"
+      ]
+    },
+    {
+      "root": "page_others",
+      "pages": [
+        "vip_room/vip_room",
+        "credit_room/credit_room",
+        "post/post",
+        "commons/commons"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#2A2A2A",
+    "selectedColor": "#2A2A2A",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_icon_0.png",
+        "selectedIconPath": "images/tab_icon_0_active.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "images/icon_lobster_line.png",
+        "selectedIconPath": "images/icon_lobster_coloure.png"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "iconPath": "images/icon_icecream_line.png",
+        "selectedIconPath": "images/icon_icecream_colour.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "iconPath": "images/icon_salad_line.png",
+        "selectedIconPath": "images/icon_salad_coloured.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "images/tab_icon_3.png",
+        "selectedIconPath": "images/tab_icon_3_active.png"
+      }
+    ]
+  }
+}
