@@ -12,8 +12,66 @@
       </swiper>
     </view>
   </nav-bar>
-  <view class="menu-banner" style="background-image: url('http://pic1.bbzhi.com/guanggaobizhi/meishicandianer/ad_menupan_02_62308_2.jpg')">
 
+  <!--banner-->
+  <view class="position-relative">
+    <view class="menu-banner" style="background-image: url('{{hotMenus[bannerIndex].image}}')" />
+    <swiper class="menu-banner-swipe"
+            circular="true"
+            style="top: {{contentPaddingTop}}px;"
+            bindchange="hotMenuBannerChange"
+            previous-margin="20rpx"
+            next-margin="150rpx"
+    >
+      <block wx:for="{{hotMenus}}" wx:key="{{item.id}}">
+        <swiper-item class="menu-banner-swipe-item">
+          <view class="position-relative menu-banner-swipe-normal {{bannerIndex === index ? '' : 'menu-banner-swipe-smaller'}}">
+            <image src="{{item.image}}" class="menu-banner-swipe-image" />
+            <view class="hot-menus-desc">
+              <view class="hot-menus-title">{{item.title}}</view>
+              <view class="d-flex align-items-center hot-menus-author">
+                <image class="hot-menus-author-icon" lazy-load="true" src="{{item.authorIcon}}"/>
+                <text>{{item.author}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <image class="banner-bottom-ad" src="http://oss.huangye88.net/live/user/2305395/1498122011094096400-0.jpg" mode="aspectFill"/>
+
+  <!--今日菜单-->
+  <view class="today-menu-title">
+    今日菜单
+    <text class="today-menu-ana">过好每一天</text>
+  </view>
+
+  <view class="d-flex today-menu-wrapper">
+    <view class="today-menu-list">
+      <view class="today-menu-item" wx:for="{{hotMenusLeft}}" wx:key="{{item.id}}">
+        <image class="today-menu-item-image" src="{{item.image}}" lazy-load="true" mode="widthFix"/>
+        <view class="today-menu-item-title">{{item.title}}</view>
+        <view class="d-flex align-items-center today-menu-item-flower">
+          <view class="d-flex align-items-center today-menu-item-author">
+            <image class="today-menu-item-authoricon" lazy-load="true" src="{{item.authorIcon}}"/>
+            <text class="today-menu-item-authorname">{{item.author}}</text>
+          </view>
+          <view class="iconfont icon-attentionfavorfill"> 10503</view>
+        </view>
+      </view>
+    </view>
+    <view class="today-menu-list">
+      <view class="today-menu-item" wx:for="{{hotMenusRight}}" wx:key="{{item.id}}">
+        <image class="today-menu-item-image" src="{{item.image}}" lazy-load="true" mode="widthFix"/>
+        <view class="today-menu-item-title">{{item.title}}</view>
+        <view class="d-flex align-items-center today-menu-item-flower">
+          <view class="d-flex align-items-center today-menu-item-author">
+            <image class="today-menu-item-authoricon" lazy-load="true" src="{{item.authorIcon}}"/>
+            <text class="today-menu-item-authorname">{{item.author}}</text>
+          </view>
+          <view class="iconfont icon-attentionfavorfill"> 10503</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </block>
