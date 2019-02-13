@@ -1,2 +1,93 @@
-<view class="friends-wrapper">
-</view>
+<block>
+  <view class="position-relative me-info-wrapper" style="padding-top: {{paddingTop}}px">
+    <view class="d-flex align-items-center me-info">
+      <image class="me-icon" lazy-load="true" src="http://pic.qqtn.com/up/2017-11/2017110215093888510.jpg"/>
+      <view class="me-name">德胜</view>
+      <view class="icon-vip"/>
+    </view>
+    <view class="d-flex align-items-center me-values">
+      <view class="me-values-item">
+        <view class="me-number">￥10.90</view>
+        <view class="me-values-desc">余额</view>
+      </view>
+      <view class="me-values-item">
+        <view class="me-number">2</view>
+        <view class="me-values-desc">红包</view>
+      </view>
+      <view class="me-values-item">
+        <view class="me-number">2</view>
+        <view class="me-values-desc">优惠券</view>
+      </view>
+      <view class="me-values-item">
+        <view class="me-number">2</view>
+        <view class="me-values-desc">积分兑换</view>
+      </view>
+    </view>
+  </view>
+
+  <!--我的订单-->
+  <view class="wrapper-card me-orders">
+    <view class="d-flex align-items-center wrapper-title">
+      <view class="wrapper-item-title">我的订单</view>
+      <view class="d-flex align-items-center all-orders">
+        <text>全部订单</text>
+        <text class="iconfont icon-right" />
+      </view>
+    </view>
+    <view class="d-flex align-items-center order-wrapper">
+      <view class="order-status">
+        <view class="order-icon waiting-pay-icon" />
+        <view>待付款</view>
+      </view>
+      <view class="order-status">
+        <view class="order-icon waiting-receive-icon" />
+        <view>待发货</view>
+      </view>
+      <view class="order-status">
+        <view class="order-icon sending-icon" />
+        <view>配送中</view>
+      </view>
+      <view class="order-status">
+        <view class="order-icon finish-icon" />
+        <view>已完成</view>
+      </view>
+    </view>
+  </view>
+
+  <!--我的服务-->
+  <view class="wrapper-card">
+    <view class="d-flex align-items-center wrapper-title">
+      <view class="wrapper-item-title">我的服务</view>
+    </view>
+    <view class="d-flex align-items-center service-wrapper">
+      <view class="series-item">
+        <view class="series-icon waiting-pay-icon" />
+        <view>邀请得红包</view>
+      </view>
+      <view class="series-item">
+        <view class="series-icon waiting-receive-icon" />
+        <view>我的拼团</view>
+      </view>
+      <view class="series-item">
+        <view class="series-icon sending-icon" />
+        <view>发文兑现</view>
+      </view>
+      <view class="series-item">
+        <view class="series-icon waiting-pay-icon" />
+        <view>福利积分</view>
+      </view>
+      <view class="series-item">
+        <view class="series-icon waiting-receive-icon" />
+        <view>收货地址</view>
+      </view>
+      <view class="series-item">
+        <view class="order-icon sending-icon" />
+        <view>客服帮助</view>
+      </view>
+      <view class="series-item">
+        <view class="order-icon waiting-pay-icon" />
+        <view>设置</view>
+      </view>
+    </view>
+  </view>
+</block>
