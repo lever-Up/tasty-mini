@@ -10,7 +10,8 @@
     "pages/friends/friends",
     "pages/menu/menu",
     "pages/me/me",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/search_result/search_result"
   ],
   "subpackages": [
     {

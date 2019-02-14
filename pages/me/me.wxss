@@ -90,7 +90,7 @@ page{
   color: #B0B0B0;
 }
 .order-wrapper{
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 30rpx 0;
 }
 .order-status{

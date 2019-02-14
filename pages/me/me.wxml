@@ -62,6 +62,10 @@
     <view class="d-flex align-items-center service-wrapper">
       <view class="series-item">
         <view class="series-icon waiting-pay-icon" />
+        <view>我的菜谱</view>
+      </view>
+      <view class="series-item">
+        <view class="series-icon waiting-pay-icon" />
         <view>邀请得红包</view>
       </view>
       <view class="series-item">

@@ -1,0 +1,78 @@
+<block>
+  <nav-bar fixed="{{true}}">
+    <view slot="content" class="d-flex align-items-center">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view bindtap="changeTab" data-tab="food" class="tab-title {{currentTab === 'food' ? 'tab-title-active' : ''}}">食材</view>
+      <view bindtap="changeTab" data-tab="menus" class="tab-title {{currentTab === 'menus' ? 'tab-title-active' : ''}}">菜谱</view>
+    </view>
+  </nav-bar>
+
+  <view style="padding-top: {{contentPaddingTop}}px">
+    <swiper style="height: {{scrollHeight}}px;"
+            current="{{currentTab === 'food' ? 0 : 1}}"
+            bindchange="changeContent"
+    >
+      <swiper-item>
+        <!--商品列表-->
+        <scroll-view
+          class="product-list"
+          scroll-y="true"
+          bindscrolltoupper="refreshProducts"
+          bindscrolltolower="loadMoreProducts"
+        >
+          <product-list-card
+            wx:for="{{productList}}"
+            wx:key="{{item.id}}"
+            product="{{item}}"
+          />
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view
+          class="menus-list"
+          scroll-y="true"
+          bindscrolltoupper="refreshMenus"
+          bindscrolltolower="loadMoreMenus"
+        >
+          <view class="d-flex today-menu-wrapper">
+            <view class="today-menu-list">
+              <view class="today-menu-item" wx:for="{{hotMenusLeft}}" wx:key="{{item.id}}">
+                <image class="today-menu-item-image" src="{{item.image}}" lazy-load="true" mode="aspectFill"/>
+                <view class="today-menu-item-title">{{item.title}}</view>
+                <view class="d-flex align-items-center today-menu-item-flower">
+                  <view class="d-flex align-items-center today-menu-item-author">
+                    <image class="today-menu-item-authoricon" lazy-load="true" src="{{item.authorIcon}}"/>
+                    <text class="today-menu-item-authorname">{{item.author}}</text>
+                  </view>
+                  <view class="iconfont icon-attentionfavorfill"> 10503</view>
+                </view>
+              </view>
+            </view>
+            <view class="today-menu-list">
+              <view class="today-menu-item" wx:for="{{hotMenusRight}}" wx:key="{{item.id}}">
+                <image class="today-menu-item-image" src="{{item.image}}" lazy-load="true" mode="aspectFill"/>
+                <view class="today-menu-item-title">{{item.title}}</view>
+                <view class="d-flex align-items-center today-menu-item-flower">
+                  <view class="d-flex align-items-center today-menu-item-author">
+                    <image class="today-menu-item-authoricon" lazy-load="true" src="{{item.authorIcon}}"/>
+                    <text class="today-menu-item-authorname">{{item.author}}</text>
+                  </view>
+                  <view class="iconfont icon-attentionfavorfill"> 10503</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!--去购物车-->
+  <view class="shopping-btn {{shoppingBtnShow ? 'shopping-btn-show' : 'shopping-btn-hide'}}"
+        bindtap="navigateToShoppingCar"
+  >
+    <view class="shopping-btn-icon position-relative">
+      <view class="iconfont icon-fugoushuai"></view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,98 @@
+
+.tab-title{
+  font-size: 32rpx;
+  padding: 0 30rpx;
+  letter-spacing: 10rpx;
+}
+.tab-title-active{
+  font-weight: bold;
+}
+.tab-title-active::after{
+  content: '';
+  display: block;
+  background-color: #2A2A2A;
+  width: 100%;
+  height: 5rpx;
+  border-radius: 2rpx;
+}
+
+/* 商品列表 */
+.product-list{
+  height: 100%;
+}
+.menus-list{
+  height: 100%;
+  background-color: #ffffff;
+}
+
+/* 菜谱 */
+.today-menu-wrapper{
+  padding-left: 30rpx;
+}
+.today-menu-item{
+  width: 338rpx;
+  float: left;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .5);
+}
+.today-menu-item-image{
+  width: 100%;
+  height: 350rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.today-menu-item-title{
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+}
+.today-menu-item-flower{
+  padding: 0 20rpx 30rpx;
+  justify-content: space-between;
+}
+.today-menu-item-authoricon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.today-menu-item-authorname{
+  font-size: 20rpx;
+  color: #B0B0B0;
+}
+.icon-attentionfavorfill{
+  font-size: 20rpx;
+  color: #676767;
+}
+
+/* 购物车按钮 */
+.shopping-btn{
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  transition: all .8s ease-in-out;
+}
+.shopping-btn-show{
+  transform: rotate(360deg) scale(1);
+}
+.shopping-btn-hide{
+  transform: rotate(-360deg) scale(0);
+}
+.shopping-btn-icon{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #E41919;
+  border-radius: 50%;
+  box-shadow: 2rpx 5rpx 20rpx #FFF1F1;
+}
+
+.icon-fugoushuai{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 50rpx;
+}
+
