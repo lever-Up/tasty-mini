@@ -44,35 +44,40 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "#2A2A2A",
-    "selectedColor": "#2A2A2A",
+    "color": "#bfbfbf",
+    "selectedColor": "#D23D64",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/tab_icon_0.png",
-        "selectedIconPath": "images/tab_icon_0_active.png"
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png",
+        "text": "首页"
       },
       {
         "pagePath": "pages/classify/classify",
-        "iconPath": "images/icon_lobster_line.png",
-        "selectedIconPath": "images/icon_lobster_coloure.png"
+        "iconPath": "images/classify.png",
+        "selectedIconPath": "images/classify_active.png",
+        "text": "分类"
       },
       {
         "pagePath": "pages/friends/friends",
-        "iconPath": "images/icon_icecream_line.png",
-        "selectedIconPath": "images/icon_icecream_colour.png"
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find_active.png",
+        "text": "食秀+"
       },
       {
         "pagePath": "pages/menu/menu",
-        "iconPath": "images/icon_salad_line.png",
-        "selectedIconPath": "images/icon_salad_coloured.png"
+        "iconPath": "images/menus.png",
+        "selectedIconPath": "images/menus_active.png",
+        "text": "菜谱"
       },
       {
         "pagePath": "pages/me/me",
-        "iconPath": "images/tab_icon_3.png",
-        "selectedIconPath": "images/tab_icon_3_active.png"
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_active.png",
+        "text": "我的"
       }
     ]
   }
