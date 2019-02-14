@@ -1,5 +1,5 @@
 .image-list{
-  padding: 30rpx 0 30rpx 30rpx;
+  padding: 30rpx 0 20rpx 30rpx;
 }
 .image-list-item{
   width: 165rpx;

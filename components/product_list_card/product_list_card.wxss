@@ -41,7 +41,8 @@
 }
 
 .pro-footer{
-  padding: 20rpx 30rpx;
+  position: relative;
+  padding: 0 30rpx;
 }
 
 .pro-statics{
@@ -74,6 +75,7 @@
 }
 .pro-card .price-wrapper{
   align-items: flex-end;
+  margin: 10rpx 0;
 }
 .pro-price{
   margin-left: 5rpx;
@@ -101,4 +103,18 @@
   border-radius: 8rpx;
   letter-spacing: 10rpx;
   align-self: flex-end;
+}
+
+.shopping-btn{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 0;
+  right: 30rpx;
+  align-items: flex-end;
+  justify-content: center;
+}
+.shopping-icon{
+  width: 40rpx;
+  height: 40rpx;
 }
