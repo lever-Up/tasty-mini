@@ -1,5 +1,5 @@
 <block>
-  <nav-bar background="{{navBarBackground}}" color="#fff" fixed="{{true}}">
+  <nav-bar color="#fff" fixed="{{true}}">
     <view slot="content" class="search-bar d-flex align-items-center" bindtap="navigateToSearch">
       <view class="iconfont icon-search"/>
       <swiper class="keys-list"
