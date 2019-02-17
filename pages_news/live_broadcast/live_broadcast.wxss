@@ -1,13 +1,65 @@
-.live-broadcast{
-
+.broadcast-title{
+  padding-right: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .broadcast-swipe{
   width: 100%;
   height: 100%;
-  background: url("http://silver-kawaraban.com/wp-content/uploads/2017/08/7c14353d83813536cae2626f1912ec7a.jpg") no-repeat;
-  background-size: cover;
+  background-color: #000;
 }
-.broadcast-item-image{
+.images-swipe{
   width: 100%;
   height: 100%;
+}
+.broadcast-item-image{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.broadcast-item-video{
+  width: 100%;
+  height: 100%;
+}
+
+.commons-wrapper{
+  position: fixed;
+  bottom: 100rpx;
+  left: 20rpx;
+  right: 0;
+}
+.user-icon{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.user-common{
+  font-size: 20rpx;
+  color: #ffffff;
+}
+
+.broadcast-opt{
+  position: fixed;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.broadcast-opt .iconfont{
+  font-size: 60rpx;
+}
+.opt-option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+.opt-options-nums{
+  font-size: 20rpx;
+  margin-top: 3rpx;
 }

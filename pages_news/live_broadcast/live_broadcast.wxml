@@ -2,27 +2,63 @@
   <nav-bar background="transparent" color="#fff" fixed="{{true}}">
     <view slot="content" class="d-flex">
       <view class="iconfont icon-back" bindtap="navigateBack"/>
-      <view>海鲜直采，有图有真相</view>
+      <view class="broadcast-title">{{daily[current].title}}</view>
     </view>
   </nav-bar>
-  <swiper class="broadcast-swipe" vertical="true">
+  <swiper class="broadcast-swipe" vertical="true" bindchange="nextSource" skip-hidden-item-layout="true">
     <swiper-item class="broadcast-item" wx:for="{{daily}}" wx:key="{{item.id}}">
-      <image class="broadcast-item-image" mode="widthFix" src="{{item.image}}" wx:if="{{item.image}}"/>
+      <!--图片-->
+      <swiper class="images-swipe" wx:if="{{item.images}}" indicator-dots="true" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff">
+        <swiper-item class="position-relative" wx:for="{{item.images}}" wx:for-item="img" wx:key="{{img.id}}">
+          <image class="broadcast-item-image"
+                 lazy-load="true"
+                 mode="widthFix"
+                 src="{{img.image}}"
+          />
+        </swiper-item>
+      </swiper>
+      <!--视频-->
       <video
-        class="broadcast-item-image"
-        wx:if="{{item.video}}"
-        src="{{item.video}}"
-        danmu-list="{{item.messages}}"
+        id="videoContext{{index}}"
+        class="broadcast-item-video"
         enable-danmu="true"
         danmu-btn="true"
         controls="true"
-        object-fit="fill"
+        object-fit="contain"
+        title="{{item.title}}"
+        wx:if="{{item.video}}"
+        src="{{item.video}}"
+        poster="{{item.cover}}"
       />
-      <view class="broadcast-footer">
-        <view>{{item.title}}</view>
-        <view>活动时间：{{item.dateRange}}</view>
-        <view>参与人数：{{item.flowers}}</view>
-        <view>预约</view>
+      <!--弹幕-->
+      <swiper class="commons-wrapper"
+              autoplay="true"
+              interval="2000"
+              circular="true"
+              vertical="true"
+              display-multiple-items="3"
+              bindchange="messageChange"
+      >
+        <swiper-item class="d-flex align-items-center message-swipe-item" wx:for="{{item.messages}}" wx:for-item="msg" wx:key="{{msg.id}}">
+          <image class="user-icon" lazy-load="true" src="{{msg.icon}}"/>
+          <text class="user-common">{{msg.desc}}</text>
+        </swiper-item>
+      </swiper>
+
+      <!--操作-->
+      <view class="broadcast-opt">
+        <view class="opt-option" bindtap="tapLike" data-id="{{item.id}}">
+          <view class="iconfont icon-likefill" />
+          <view class="opt-options-nums">9080</view>
+        </view>
+        <view class="opt-option" bindtap="tapShare" data-id="{{item.id}}">
+          <view class="iconfont icon-forwardfill" />
+          <view class="opt-options-nums">9080</view>
+        </view>
+        <view class="opt-option" bindtap="tapSuggest" data-id="{{item.id}}">
+          <view class="iconfont icon-favorfill" />
+          <view class="opt-options-nums">推荐</view>
+        </view>
       </view>
     </swiper-item>
   </swiper>

@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -92,6 +92,13 @@
 					"id": -1,
 					"name": "search_result",
 					"pathName": "pages/search_result/search_result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "live_broadcast",
+					"pathName": "pages_news/live_broadcast/live_broadcast",
 					"query": "",
 					"scene": null
 				},
