@@ -2,7 +2,6 @@ import { daily } from './data';
 
 Page({
   data: {
-    contentPaddingTop: getApp().globalData.contentPaddingTop,
     daily,
   },
   onLoad() {
@@ -10,4 +9,4 @@ Page({
   navigateBack() {
     wx.navigateBack();
   },
-});
+})

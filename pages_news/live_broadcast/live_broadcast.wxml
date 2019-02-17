@@ -1,11 +1,33 @@
 <block>
-  <nav-bar background="{{navBarBackground}}" color="{{navBarColor}}" fixed="{{true}}">
+  <nav-bar background="transparent" color="#fff" fixed="{{true}}">
     <view slot="content" class="d-flex">
       <view class="iconfont icon-back" bindtap="navigateBack"/>
       <view>海鲜直采，有图有真相</view>
     </view>
   </nav-bar>
-  <view class="live-broadcast">
-    
-  </view>
+  <swiper class="broadcast-swipe" vertical="true">
+    <swiper-item class="broadcast-item" wx:for="{{daily}}" wx:key="{{item.id}}">
+      <image class="broadcast-item-image" mode="widthFix" src="{{item.image}}" wx:if="{{item.image}}"/>
+      <video
+        class="broadcast-item-image"
+        wx:if="{{item.video}}"
+        src="{{item.video}}"
+        danmu-list="{{item.messages}}"
+        enable-danmu="true"
+        danmu-btn="true"
+        controls="true"
+        object-fit="fill"
+      />
+      <view class="broadcast-footer">
+        <view>{{item.title}}</view>
+        <view>活动时间：{{item.dateRange}}</view>
+        <view>参与人数：{{item.flowers}}</view>
+        <view>预约</view>
+      </view>
+    </swiper-item>
+  </swiper>
 </block>
+
+
+
+

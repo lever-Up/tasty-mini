@@ -1,0 +1,25 @@
+<block>
+  <nav-bar background="transparent" color="#fff" fixed="{{true}}">
+    <view slot="content" class="d-flex">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view>海鲜直采，有图有真相</view>
+    </view>
+  </nav-bar>
+  <view class="live-broadcast">
+    <swiper class="broadcast-swipe">
+      <swiper-item class="position-relative" wx:for="{{daily}}" wx:key="{{item.id}}">
+        <image src="{{item.cover}}" class="slide-image" />
+        <view class="broadcast-footer">
+          <view>{{item.title}}</view>
+          <view>活动时间：{{item.dateRange}}</view>
+          <view>参与人数：{{item.flowers}}</view>
+          <view>预约</view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</block>
+
+
+
+

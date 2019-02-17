@@ -1,5 +1,13 @@
 .live-broadcast{
-  background: url("http://plsi1usd8.bkt.clouddn.com/01300001184070130422437357115.jpg") no-repeat;
+
+}
+.broadcast-swipe{
+  width: 100%;
+  height: 100%;
+  background: url("http://silver-kawaraban.com/wp-content/uploads/2017/08/7c14353d83813536cae2626f1912ec7a.jpg") no-repeat;
   background-size: cover;
+}
+.broadcast-item-image{
+  width: 100%;
   height: 100%;
 }

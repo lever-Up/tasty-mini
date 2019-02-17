@@ -1,0 +1,14 @@
+.live-broadcast{
+  background: url("http://plsi1usd8.bkt.clouddn.com/01300001184070130422437357115.jpg") no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.broadcast-swipe{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 900rpx;
+  width: 80%;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.16);
+}
