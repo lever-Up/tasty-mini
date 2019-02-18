@@ -1,5 +1,8 @@
 Page({
-  data:{},
+  data:{
+    contentPaddingTop: getApp().globalData.contentPaddingTop,
+  },
+  noneTap() {},
   navigateBack() {
     wx.navigateBack();
   },

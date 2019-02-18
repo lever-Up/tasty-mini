@@ -14,8 +14,8 @@ Page({
       current
     });
     if (this.videoContext) {
-      this.videoContext.stop();
       this.videoContext.pause();
+      this.videoContext.stop();
     }
     if (daily[current].video) {
       this.videoContext = wx.createVideoContext(`videoContext${current}`);

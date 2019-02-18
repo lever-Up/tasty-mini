@@ -38,3 +38,19 @@
 .icon-back{
   width: 80rpx;
 }
+
+/* 隐藏 | 显示*/
+.wx-show{
+  display: block;
+}
+.wx-hide{
+  display: none;
+}
+
+/* 简单动画 wx-slide-up | wx-slide-down*/
+.wx-slide-up{
+  transform: translate(-50%, -50%) !important;
+}
+.wx-slide-down{
+  transform: translate(-50%, 100%) !important;
+}
