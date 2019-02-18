@@ -4,15 +4,15 @@ var dialogId = 'dialog',
 var getDialogInstance = function (event, ownerInstance) {
   return {
     dialog: ownerInstance.selectComponent('#' + dialogId),
-    content: ownerInstance.selectComponent('#' + dialogContentId)
+    // content: ownerInstance.selectComponent('#' + dialogContentId)
   };  // 返回组件的实例
 };
 var show = function (event, ownerInstance) {
   var instance = getDialogInstance(event, ownerInstance);
   instance.dialog.removeClass('wx-hide');
   instance.dialog.addClass('wx-show');
-    instance.content.removeClass('wx-slide-down');
-    instance.content.addClass('wx-slide-up');
+  // instance.content.removeClass('wx-slide-down');
+  // instance.content.addClass('wx-slide-up');
   // 不往上冒泡，相当于调用了同时调用了stopPropagation和preventDefault
   return false;
 };
@@ -20,8 +20,8 @@ var hide = function (event, ownerInstance) {
   var instance = getDialogInstance(event, ownerInstance);
   instance.dialog.removeClass('wx-show');
   instance.dialog.addClass('wx-hide');
-  instance.content.removeClass('wx-slide-up');
-  instance.content.addClass('wx-slide-down');
+  // instance.content.removeClass('wx-slide-up');
+  // instance.content.addClass('wx-slide-down');
   return false;
 };
 

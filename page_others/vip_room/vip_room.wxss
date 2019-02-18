@@ -1,17 +1,15 @@
-page{
-  overflow: hidden;
-}
 .vip-room{
   width: 200%;
-  height: 650rpx;
+  height: 525rpx;
   background-image: linear-gradient(-218deg, #FFC39F 0%, #FF874C 100%);
-  overflow: hidden;
+  overflow-x: hidden;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   transform: translateX(-25%);
 }
 .header-content{
   margin: 0 25%;
+  height: 100%;
 }
 .header-content-item{
   padding: 20rpx 20rpx 0 20rpx;
@@ -55,9 +53,13 @@ page{
   margin-left: 10rpx;
 }
 .vip-privilege{
-  margin: 20rpx 20rpx 0 20rpx;
+  padding: 30rpx;
   background-color: #ffffff;
   border-radius: 10rpx;
+  position: absolute;
+  top: 280rpx;
+  left: 20rpx;
+  right: 20rpx;
 }
 
 .vip-description-dialog{

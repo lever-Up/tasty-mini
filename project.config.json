@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -106,6 +106,13 @@
 					"id": -1,
 					"name": "live_broadcast",
 					"pathName": "pages_news/live_broadcast/live_broadcast",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vip_room",
+					"pathName": "page_others/vip_room/vip_room",
 					"query": "",
 					"scene": null
 				},

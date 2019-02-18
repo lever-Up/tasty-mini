@@ -7,8 +7,8 @@
       <view>优享会员</view>
     </view>
   </nav-bar>
-  <view class="position-relative vip-room" style="padding-top: {{contentPaddingTop}}px">
-    <view class="header-content">
+  <view class="vip-room" style="padding-top: {{contentPaddingTop}}px">
+    <view class="position-relative header-content">
       <view class="d-flex align-items-center header-content-item user-info">
         <view class="d-flex align-items-center">
           <image class="user-icon" lazy-load="true" src="http://pic.qqtn.com/up/2017-11/2017110215093888510.jpg"/>
@@ -25,28 +25,29 @@
           <text class="iconfont icon-questionfill"/>
         </view>
       </view>
-      <!--vip特权-->
-      <view class="vip-privilege">
-        <view class="privilege-title">
-          <text>优享会员 享</text>
-          <text class="privilege-options-num">7</text>
-          <text>大特权</text>
-        </view>
-        <view class="privilege-values">
-          <text>会员期间已为您节省￥600.90</text>
-          <text class="iconfont icon-playfill" />
-        </view>
-        <view class="privilege-options">
-          <view class="privilege-item">会员专享价</view>
-          <view class="privilege-item">精彩活动</view>
-          <view class="privilege-item">积分加倍</view>
-          <view class="privilege-item">专属客服</view>
-        </view>
-        <view class="privilege-being">
-          <view class="privilege-btn-name">立即成为会员</view>
-          <view class="privilege-daily-price">每天低至0.1元</view>
-        </view>
-      </view>
+    </view>
+  </view>
+
+  <!--vip特权-->
+  <view class="vip-privilege">
+    <view class="privilege-title">
+      <text>优享会员 享</text>
+      <text class="privilege-options-num">7</text>
+      <text>大特权</text>
+    </view>
+    <view class="privilege-values">
+      <text>会员期间已为您节省￥600.90</text>
+      <text class="iconfont icon-playfill" />
+    </view>
+    <view class="privilege-options">
+      <view class="privilege-item">会员专享价</view>
+      <view class="privilege-item">精彩活动</view>
+      <view class="privilege-item">积分加倍</view>
+      <view class="privilege-item">专属客服</view>
+    </view>
+    <view class="privilege-being">
+      <view class="privilege-btn-name">立即成为会员</view>
+      <view class="privilege-daily-price">每天低至0.1元</view>
     </view>
   </view>
 
