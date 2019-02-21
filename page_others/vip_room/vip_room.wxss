@@ -1,6 +1,6 @@
 .vip-room{
   width: 200%;
-  height: 525rpx;
+  height: 450rpx;
   background-image: linear-gradient(-218deg, #FFC39F 0%, #FF874C 100%);
   overflow-x: hidden;
   border-bottom-right-radius: 50%;
@@ -60,6 +60,12 @@
   top: 280rpx;
   left: 20rpx;
   right: 20rpx;
+  font-size: 30rpx;
+  opacity: .9;
+}
+.privilege-title{
+  font-size: 34rpx;
+  font-weight: bold;
 }
 
 .vip-description-dialog{

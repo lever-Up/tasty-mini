@@ -29,7 +29,7 @@
   </view>
 
   <!--vip特权-->
-  <view class="vip-privilege">
+  <view class="vip-privilege" style="top: {{contentPaddingTop + rpx140px}}px">
     <view class="privilege-title">
       <text>优享会员 享</text>
       <text class="privilege-options-num">7</text>
