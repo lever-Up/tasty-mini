@@ -1,11 +1,11 @@
 export const testImages = [
-  'http://plsi1usd8.bkt.clouddn.com/20190212193232.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193258.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193309.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193319.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193328.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193337.jpg',
-  'http://plsi1usd8.bkt.clouddn.com/20190212193346.jpg',
+  'http://yahwo.cn/20190212193232.jpg',
+  'http://yahwo.cn/20190212193258.jpg',
+  'http://yahwo.cn/20190212193309.jpg',
+  'http://yahwo.cn/20190212193319.jpg',
+  'http://yahwo.cn/20190212193328.jpg',
+  'http://yahwo.cn/20190212193337.jpg',
+  'http://yahwo.cn/20190212193346.jpg',
 ];
 
 export const adBanners = [
