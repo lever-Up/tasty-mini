@@ -24,8 +24,12 @@ var hide = function (event, ownerInstance) {
   // instance.content.addClass('wx-slide-down');
   return false;
 };
+var voidTap = function(){
+
+};
 
 module.exports = {
   show: show,
   hide: hide,
+  voidTap: voidTap,
 };

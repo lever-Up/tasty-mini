@@ -32,18 +32,30 @@
   <view class="vip-privilege" style="top: {{contentPaddingTop + rpx140px}}px">
     <view class="privilege-title">
       <text>优享会员 享</text>
-      <text class="privilege-options-num">7</text>
+      <text class="privilege-options-num">4</text>
       <text>大特权</text>
     </view>
     <view class="privilege-values">
       <text>会员期间已为您节省￥600.90</text>
       <text class="iconfont icon-playfill" />
     </view>
-    <view class="privilege-options">
-      <view class="privilege-item">会员专享价</view>
-      <view class="privilege-item">精彩活动</view>
-      <view class="privilege-item">积分加倍</view>
-      <view class="privilege-item">专属客服</view>
+    <view class="d-flex privilege-options">
+      <view class="privilege-item">
+        <view class="privilege-item-icon vip-card"/>
+        <view>会员专享价</view>
+      </view>
+      <view class="privilege-item">
+        <view class="privilege-item-icon active-icon"/>
+        <view>精彩活动</view>
+      </view>
+      <view class="privilege-item">
+        <view class="privilege-item-icon score-icon"/>
+        <view>积分加倍</view>
+      </view>
+      <view class="privilege-item">
+        <view class="privilege-item-icon answer-icon"/>
+        <view>专属客服</view>
+      </view>
     </view>
     <view class="privilege-being">
       <view class="privilege-btn-name">立即成为会员</view>
@@ -51,12 +63,39 @@
     </view>
   </view>
 
+  <!--会员活动-->
+  <view class="position-relative privilege-card active-banner">
+    <swiper class="banner-swipe" bindchange="handleSwipeChange" autoplay="true" circular="true">
+      <swiper-item wx:for="{{banners}}" wx:key="{{item.id}}">
+        <image class="privilege-banner-image" src="{{item.image}}" />
+      </swiper-item>
+    </swiper>
+    <view class="banner-index">{{currentBannerIndex}} / {{banners.length}}</view>
+  </view>
+
+  <!--会员特权说明-->
+  <block>
+    <view class="privilege-card">
+      <view class="d-flex card-title">
+        <text>会员专享价</text>
+        <text class="privilege-ana">钱包膨胀吧~</text>
+      </view>
+      <image class="privilege-card-image" src="{{item.image}}" />
+    </view>
+    <view class="privilege-card">
+      <view class="d-flex card-title">
+        <text>精彩活动</text>
+        <text class="privilege-ana">定期线上线下活动，等你来~</text>
+      </view>
+      <image class="privilege-card-image" src="{{item.image}}" />
+    </view>
+  </block>
+
   <!--vip说明弹窗-->
   <view class="vip-description-dialog wx-hide"
         id="dialog"
-        bindtap="{{dialogFnc.hide}}"
-  >
-    <view id="dialogContent" class="dialog-content" catchtap="noneTap">
+        bindtap="{{dialogFnc.hide}}">
+    <view id="dialogContent" class="dialog-content" catchtap="{{dialogFnc.voidTap}}">
       本方案基本的思路是减少通信的次数，让事件在视图层（Webview）响应。
       小程序的框架分为视图层（Webview）和逻辑层（App Service），
       这样分层的目的是管控，开发者的代码只能运行在逻辑层（App Service），
