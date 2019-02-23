@@ -5,4 +5,47 @@
       <view>送礼啦</view>
     </view>
   </nav-bar>
+
+  <view class="credit-room" style="padding-top: {{contentPaddingTop}}px">
+    <view class="d-flex align-items-center user-info">
+      <view class="d-flex align-items-center">
+        <image class="user-icon" lazy-load="true" src="http://pic.qqtn.com/up/2017-11/2017110215093888510.jpg"/>
+        <view>
+          <view class="d-flex align-items-center user-name">
+            <text>德胜</text>
+            <text class="icon-vip"/>
+          </view>
+          <view class="vip-deadline">会员等级V3</view>
+        </view>
+      </view>
+      <view class="score-description">
+        <view>我的积分</view>
+        <view class="score-num">1200</view>
+      </view>
+    </view>
+  </view>
+
+  <!--兑换产品-->
+  <view class="d-flex credit-products-wrapper">
+    <view class="credit-products-list">
+      <view class="credit-products-item" wx:for="{{productsLeft}}" wx:key="{{item.id}}">
+        <image class="credit-products-item-image" src="{{item.image}}" lazy-load="true" mode="aspectFill"/>
+        <view class="credit-products-item-title">{{item.title}}</view>
+        <view class="d-flex align-items-center credit-products-item-flower">
+          <view class="has-song">已兑 1023</view>
+          <view class="score-num">{{item.score}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="credit-products-list">
+      <view class="credit-products-item" wx:for="{{productsRight}}" wx:key="{{item.id}}">
+        <image class="credit-products-item-image" src="{{item.image}}" lazy-load="true" mode="aspectFill"/>
+        <view class="credit-products-item-title">{{item.title}}</view>
+        <view class="d-flex align-items-center credit-products-item-flower">
+          <view class="has-song"> 已兑 543</view>
+          <view class="score-num">{{item.score}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </block>

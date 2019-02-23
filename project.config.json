@@ -118,8 +118,9 @@
 				},
 				{
 					"id": -1,
-					"name": "vip_room",
-					"pathName": "page_others/vip_room/vip_room",
+					"name": "credit_room",
+					"pathName": "page_others/credit_room/credit_room",
+					"query": "",
 					"scene": null
 				}
 			]
