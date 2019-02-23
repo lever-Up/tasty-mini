@@ -10,6 +10,7 @@ Page({
     searchKeys,
     classifies,
     activeClassifyIndex: 0,
+    scrollLeft: 0,
   },
   onLoad: function () {
     // 关键字
@@ -20,7 +21,8 @@ Page({
     if (index !== this.data.activeClassifyIndex) {
       this.setData({
         activeClassifyIndex: index,
-      })
+        scrollLeft: `${120 * index}rpx`
+      });
     }
   },
   onKeyWordChange(e) {

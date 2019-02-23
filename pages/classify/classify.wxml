@@ -12,19 +12,21 @@
       </swiper>
     </view>
   </nav-bar>
-  <view class="d-flex classify-wrapper" style="padding-top: {{contentPadding}}px; height: {{contentHeight}}px">
-    <!--左边-->
-    <view class="classify-left">
-      <view wx:for="{{classifies}}" wx:key="{{item.id}}"
-            class="d-flex align-items-center position-relative classify-left-item"
+
+  <view class="classify-list" style="padding-top: {{contentPadding}}px;">
+    <scroll-view class="d-flex classify-list-scroll" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+      <view class="position-relative classify-list-item {{index === activeClassifyIndex ? 'classify-list-item-active' : ''}}"
+            wx:for="{{classifies}}"
+            wx:key="{{item.id}}"
             data-index="{{index}}"
             bindtap="changeClassify"
       >
-        <image src="{{item.icon}}" class="classify-left-item-image" lazy-load="true" mode="aspectFit"/>
-        <view class="classify-left-item-name {{index === activeClassifyIndex ? 'classify-left-item-name-active':''}}">{{item.name}}</view>
-        <view class="classify-left-item-active" hidden="{{index !== activeClassifyIndex}}"/>
+        <image src="{{item.icon}}" class="classify-item-image" lazy-load="true" mode="aspectFill"/>
+        <view class="classify-item-name">{{item.name}}</view>
       </view>
-    </view>
+    </scroll-view>
+  </view>
+  <view class="d-flex classify-wrapper">
     <!--右边-->
     <view class="classify-right">
       <swiper
@@ -45,7 +47,8 @@
 
       <view class="d-flex classify-right-content">
         <view wx:for="{{classifies[activeClassifyIndex].list}}" wx:key="{{item.id}}" class="classify-right-item">
-          {{item.name}}
+          <image class="classify-right-image" mode="aspectFill" src="{{item.icon}}" />
+          <view class="classify-right-name">{{item.name}}</view>
         </view>
       </view>
     </view>
