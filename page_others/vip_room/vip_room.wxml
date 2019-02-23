@@ -1,7 +1,7 @@
 <block>
   <wxs module="dialogFnc" src="../../wxs/dialog.wxs"></wxs>
 
-  <nav-bar background="transparent" color="#fff" fixed="{{true}}">
+  <nav-bar background="{{navBarBackground}}" color="{{navBarColor}}" fixed="{{true}}">
     <view slot="content" class="d-flex">
       <view class="iconfont icon-back" bindtap="navigateBack"/>
       <view>优享会员</view>
@@ -67,7 +67,7 @@
   <view class="position-relative privilege-card active-banner">
     <swiper class="banner-swipe" bindchange="handleSwipeChange" autoplay="true" circular="true">
       <swiper-item wx:for="{{banners}}" wx:key="{{item.id}}">
-        <image class="privilege-banner-image" src="{{item.image}}" />
+        <image mode="aspectFill" class="privilege-banner-image" src="{{item.image}}" />
       </swiper-item>
     </swiper>
     <view class="banner-index">{{currentBannerIndex}} / {{banners.length}}</view>
@@ -80,16 +80,37 @@
         <text>会员专享价</text>
         <text class="privilege-ana">钱包膨胀吧~</text>
       </view>
-      <image class="privilege-card-image" src="{{item.image}}" />
+      <image class="privilege-card-image" mode="aspectFill" src="{{banners[0].image}}" />
     </view>
     <view class="privilege-card">
       <view class="d-flex card-title">
         <text>精彩活动</text>
         <text class="privilege-ana">定期线上线下活动，等你来~</text>
       </view>
-      <image class="privilege-card-image" src="{{item.image}}" />
+      <image class="privilege-card-image" mode="aspectFill" src="{{banners[0].image}}" />
+    </view>
+    <view class="privilege-card">
+      <view class="d-flex card-title">
+        <text>积分加倍</text>
+        <text class="privilege-ana">精美礼物等你兑换~</text>
+      </view>
+      <image class="privilege-card-image" mode="aspectFill" src="{{banners[0].image}}" />
+    </view>
+    <view class="privilege-card">
+      <view class="d-flex card-title">
+        <text>专属客服</text>
+        <text class="privilege-ana">您说，我在呢~</text>
+      </view>
+      <image class="privilege-card-image" mode="aspectFill" src="{{banners[0].image}}" />
     </view>
   </block>
+
+  <view style="height: 190rpx" hidden="{{fixedBottom}}">
+    <view class="privilege-being fixed-bottom">
+      <view class="privilege-btn-name">立即成为会员</view>
+      <view class="privilege-daily-price">每天低至0.1元</view>
+    </view>
+  </view>
 
   <!--vip说明弹窗-->
   <view class="vip-description-dialog wx-hide"
