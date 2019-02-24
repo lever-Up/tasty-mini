@@ -57,7 +57,7 @@
     </view>
     <view class="guide-item guide-item-2" bindtap="navigateToLive">
       <view class="guide-title">直采</view>
-      <view class="guide-description">海里直采，吃得放心</view>
+      <view class="guide-description">海里直采，有图有真相</view>
       <view class="guide-icon guide-icon-2"></view>
     </view>
     <view class="guide-item guide-item-3" bindtap="navigateToVip">
