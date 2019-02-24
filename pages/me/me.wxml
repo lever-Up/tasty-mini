@@ -27,7 +27,7 @@
 
   <!--我的订单-->
   <view class="wrapper-card me-orders">
-    <view class="d-flex align-items-center wrapper-title">
+    <view class="d-flex align-items-center wrapper-title" data-status="all" bindtap="navigateToOrders">
       <view class="wrapper-item-title">我的订单</view>
       <view class="d-flex align-items-center all-orders">
         <text>全部订单</text>
@@ -35,19 +35,19 @@
       </view>
     </view>
     <view class="d-flex align-items-center order-wrapper">
-      <view class="order-status">
+      <view class="order-status" data-status="pay" bindtap="navigateToOrders">
         <view class="order-icon waiting-pay-icon" />
         <view>待付款</view>
       </view>
-      <view class="order-status">
+      <view class="order-status" data-status="send" bindtap="navigateToOrders">
         <view class="order-icon waiting-receive-icon" />
         <view>待发货</view>
       </view>
-      <view class="order-status">
+      <view class="order-status" data-status="onWay" bindtap="navigateToOrders">
         <view class="order-icon sending-icon" />
         <view>配送中</view>
       </view>
-      <view class="order-status">
+      <view class="order-status" data-status="finish" bindtap="navigateToOrders">
         <view class="order-icon finish-icon" />
         <view>已完成</view>
       </view>

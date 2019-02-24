@@ -20,7 +20,11 @@ Page({
     contentHeight: getApp().globalData.systemInfo.screenHeight - getApp().globalData.contentPaddingTop - rpxToPx(100),
     orders,
   },
-  onLoad() {
+  onLoad(query) {
+    const { status } = query;
+    this.setData({
+      currentTab: status,
+    })
   },
   onReachBottom() {
     console.error('到底了');
