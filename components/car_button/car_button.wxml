@@ -1,0 +1,9 @@
+<block>
+  <!--去购物车-->
+  <view class="shopping-btn {{visible ? 'shopping-btn-show' : 'shopping-btn-hide'}}"
+        bindtap="navigateToShoppingCar">
+    <view class="shopping-btn-icon position-relative">
+      <view class="iconfont icon-fugoushuai"></view>
+    </view>
+  </view>
+</block>

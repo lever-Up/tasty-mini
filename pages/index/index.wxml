@@ -30,13 +30,12 @@
       />
     </view>
   </view>
-
   <!-- 分类 -->
   <view class="classify-wrapper d-flex">
       <view class="classify-item d-flex"
             wx:for="{{classifies}}"
             wx:key="{{item.id}}"
-            bindtap="navigateToProducts"
+            bindtap="navigateToSearchResult"
             data-keyword="{{item.name}}"
       >
         <image class="classify-item-image" lazy-load="true" src="{{item.icon}}" />
@@ -90,7 +89,7 @@
   <view class="product-list">
     <view class="wrapper-title">
       热卖海鲜
-      <view class="wrapper-title-more" bindtap="navigateToProducts" data-keyword="hot">更多</view>
+      <view class="wrapper-title-more" bindtap="navigateToClassify" data-keyword="hot">更多</view>
     </view>
     <product-list-card
       wx:for="{{productList}}"
@@ -98,4 +97,6 @@
       product="{{item}}"
     />
   </view>
+  <!--去购物车-->
+  <car-button visible="{{shoppingBtnShow}}"/>
 </block>

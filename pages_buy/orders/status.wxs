@@ -1,0 +1,15 @@
+var Status = [
+  '已签收',
+  '待付款',
+  '待发货',
+  '配送中',
+  '已取消',
+  '已退款',
+];
+var analysis = function (status) {
+  return Status[status];
+};
+
+module.exports = {
+  analysis: analysis,
+};

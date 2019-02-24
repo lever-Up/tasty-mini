@@ -1,0 +1,31 @@
+/*组件无法用到公用样式*/
+@import "../../font/iconfont.wxss";
+
+/* 购物车按钮 */
+.shopping-btn{
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  transition: all .8s ease-in-out;
+}
+.shopping-btn-show{
+  transform: rotate(360deg) scale(1);
+}
+.shopping-btn-hide{
+  transform: rotate(-360deg) scale(0);
+}
+.shopping-btn-icon{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #E41919;
+  border-radius: 50%;
+  box-shadow: 2rpx 5rpx 20rpx #FFF1F1;
+}
+.icon-fugoushuai{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 50rpx;
+}

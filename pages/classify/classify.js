@@ -35,4 +35,10 @@ Page({
       url: `/pages/search/search?keyword=${this.keyWord}`,
     });
   },
+  navigateToSearchResult(e) {
+    const {keyword} = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/search_result/search_result?keyword=${keyword}`,
+    });
+  },
 });

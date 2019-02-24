@@ -2,7 +2,8 @@
   "usingComponents": {
     "product-list-card": "components/product_list_card/product_list_card",
     "nav-bar": "components/nav_bar/nav_bar",
-    "ticket-card": "components/ticket_card/ticket_card"
+    "ticket-card": "components/ticket_card/ticket_card",
+    "car-button": "components/car_button/car_button"
   },
   "pages":[
     "pages/index/index",
@@ -17,7 +18,8 @@
     {
       "root": "pages_buy",
       "pages": [
-        "group_buying/group_buying"
+        "group_buying/group_buying",
+        "orders/orders"
       ]
     },
     {

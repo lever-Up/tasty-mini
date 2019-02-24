@@ -1,4 +1,4 @@
-import {banners, productList, tickets, searchKeys, classifies} from 'data';
+import {banners, classifies, productList, searchKeys, tickets} from 'data';
 
 Page({
   data: {
@@ -15,43 +15,45 @@ Page({
     // nav-bar 样式监听
     this.searchBarObserver = wx.createIntersectionObserver(this);
     this.searchBarObserver
-        .relativeToViewport({top: 0})
-        .observe('.banner-swipe', (res) => {
-          const { bottom } = res.intersectionRect;
-          if (bottom > 0) {
-            const barStyle = {
-              frontColor: '#ffffff',
-              backgroundColor: '#000000',
-            };
-            wx.setNavigationBarColor(barStyle);
-            this.setData({
-              navBarBackground: 'transparent',
-              navBarColor: barStyle.frontColor,
-            })
-          } else {
-            const barStyle = {
-              frontColor: '#000000',
-              backgroundColor: '#ffffff',
-            };
-            wx.setNavigationBarColor(barStyle);
-            this.setData({
-              navBarBackground: barStyle.backgroundColor,
-              navBarColor: barStyle.frontColor,
-            })
-          }
-        })
+      .relativeToViewport({top: 0})
+      .observe('.banner-swipe', (res) => {
+        const {bottom} = res.intersectionRect;
+        if (bottom > 0) {
+          const barStyle = {
+            frontColor: '#ffffff',
+            backgroundColor: '#000000',
+          };
+          wx.setNavigationBarColor(barStyle);
+          this.setData({
+            navBarBackground: 'transparent',
+            navBarColor: barStyle.frontColor,
+            shoppingBtnShow: false,
+          })
+        } else {
+          const barStyle = {
+            frontColor: '#000000',
+            backgroundColor: '#ffffff',
+          };
+          wx.setNavigationBarColor(barStyle);
+          this.setData({
+            navBarBackground: barStyle.backgroundColor,
+            navBarColor: barStyle.frontColor,
+            shoppingBtnShow: true,
+          })
+        }
+      });
   },
   onUnload() {
     if (this.searchBarObserver) this.searchBarObserver.disconnect();
   },
   changeBanner(e) {
-    const { current } = e.detail;
+    const {current} = e.detail;
     this.setData({
       bannerIndex: current,
     })
   },
   onKeyWordChange(e) {
-    const { current } = e.detail;
+    const {current} = e.detail;
     this.keyWord = this.data.searchKeys[current];
   },
   // 搜索
@@ -85,10 +87,25 @@ Page({
     });
   },
   // 商品列表
-  navigateToProducts(e) {
-    const { keyword } = e.currentTarget.dataset;
+  navigateToSearchResult(e) {
+    const {keyword} = e.currentTarget.dataset;
+    if (keyword === '更多') {
+      this.navigateToClassify(e);
+      return;
+    }
     wx.navigateTo({
-      url: `/pages/products/products?keyword=${keyword}`,
+      url: `/pages/search_result/search_result?keyword=${keyword}`,
     });
   },
+  // 分类页
+  navigateToClassify(e) {
+    wx.switchTab({
+      url: `/pages/classify/classify`,
+    });
+  },
+  navigateToShoppingCar() {
+    wx.navigateTo({
+      url: '/pages/shopping_car/shopping_car'
+    })
+  }
 });

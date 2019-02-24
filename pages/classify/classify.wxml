@@ -46,7 +46,12 @@
       </swiper>
 
       <view class="d-flex classify-right-content">
-        <view wx:for="{{classifies[activeClassifyIndex].list}}" wx:key="{{item.id}}" class="classify-right-item">
+        <view wx:for="{{classifies[activeClassifyIndex].list}}"
+              wx:key="{{item.id}}"
+              class="classify-right-item"
+              bindtap="navigateToSearchResult"
+              data-keyword="{{item.name}}"
+        >
           <image class="classify-right-image" mode="aspectFill" src="{{item.icon}}" />
           <view class="classify-right-name">{{item.name}}</view>
         </view>

@@ -1,0 +1,53 @@
+<block>
+  <wxs module="wxs" src="./status.wxs"></wxs>
+  <nav-bar fixed="{{false}}">
+    <view slot="content" class="d-flex">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view>我的订单</view>
+    </view>
+  </nav-bar>
+  <view class="d-flex tabs-wrapper">
+    <view
+      wx:for="{{TabType}}"
+      wx:key="{{item.value}}"
+      class="tab-item {{currentTab === item.value ? 'tab-active' : ''}}"
+      bindtap="onChangeTab"
+      data-tab="{{item.value}}"
+    >{{item.name}}
+    </view>
+  </view>
+
+  <!--订单列表-->
+  <view
+    wx:for="{{orders}}"
+    wx:key="{{item.id}}"
+    class="order-item"
+  >
+    <view class="d-flex product-info">
+      <view class="iconfont icon-icon_crab_coloured" />
+      <view>
+        <text class="product-time">{{item.createTime}}</text>
+        <text class="product-status">{{wxs.analysis(item.status)}}</text>
+      </view>
+    </view>
+    <view class="product-list">
+      <view
+        wx:for="{{item.products}}"
+        wx:for-item="product"
+        wx:key="{{product.id}}"
+        class="product-item"
+      >
+        <image lazy-load="true" mode="aspectFill" src="{{product.image}}" class="product-img"/>
+        <view class="product-name">
+          <text>{{product.name}}</text>
+          <text class="product-nums">x{{product.nums}}</text>
+        </view>
+        <view class="product-price">￥{{product.price}}</view>
+      </view>
+    </view>
+    <view class="d-flex buy-again">
+      <text>实付：<text class="buy-pay">￥{{item.pay}}</text></text>
+      <image class="shopping-icon" src="../../images/shopping.png"/>
+    </view>
+  </view>
+</block>

@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -121,6 +121,12 @@
 					"name": "credit_room",
 					"pathName": "page_others/credit_room/credit_room",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orders",
+					"pathName": "pages_buy/orders/orders",
 					"scene": null
 				}
 			]
