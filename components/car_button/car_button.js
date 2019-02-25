@@ -10,6 +10,11 @@ Component({
   attached() {
   },
   methods: {
-
+    // 购物车
+    navigateToShoppingCar() {
+      wx.navigateTo({
+        url: '/pages/shopping_car/shopping_car'
+      })
+    }
   }
 });

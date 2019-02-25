@@ -1,0 +1,116 @@
+<block>
+  <wxs module="wxs" src="./shopping_car.wxs"></wxs>
+  <nav-bar background="#fff" fixed="{{true}}">
+    <view slot="content" class="d-flex">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view>购物车</view>
+    </view>
+  </nav-bar>
+  <view style="padding-top: {{contentPaddingTop}}px">
+    <!--商品信息-->
+    <block>
+      <view class="d-flex align-items-center shopping-header">
+        <view class="vip-tips">优享会员</view>
+        <view class="vip-reduce">会员本单立省9.5元</view>
+      </view>
+      <view class="d-flex align-items-center header">
+        <view class="d-flex align-items-center" bindtap="checkAll">
+          <text class="iconfont {{checkAll ? 'icon-squarecheckfill' : 'icon-square'}}" />
+          <text class="iconfont icon-goodsfill" />
+        </view>
+        <view class="header-right">
+          <text>满50免运费，还差10元，去凑单吧</text>
+          <text class="iconfont icon-right" />
+        </view>
+      </view>
+      <view class="product-list">
+        <view class="d-flex product-item" wx:for="{{products}}" wx:key="{{index}}">
+          <view class="d-flex align-items-center iconfont {{item.check ? 'icon-squarecheckfill' : 'icon-square'}}"
+                bindtap="checkItem"
+                data-index="{{index}}"
+                data-check="{{item.check}}"
+          />
+          <image lazy-load="true" mode="aspectFill" src="{{item.image}}" class="product-img"/>
+          <view class="d-flex flex-column product-info">
+            <view class="product-name">{{item.name}}</view>
+            <view class="d-flex product-price">
+              <view class="product-normal-price">￥{{item.price}}</view>
+              <view class="product-vip-price">
+                ￥{{wxs.count(item.vipPrice, item.num)}}
+                <text class="vip-label">会员价</text>
+              </view>
+            </view>
+          </view>
+          <view class="d-flex product-opt">
+            <view class="iconfont icon-move" data-index="{{index}}" bindtap="minus"/>
+            <view class="product-num">{{item.num}}</view>
+            <view class="iconfont icon-add" data-index="{{index}}" bindtap="plus"/>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--订单信息-->
+    <block>
+      <view class="d-flex align-items-center shopping-header info-header">
+        <view class="vip-tips">订单信息</view>
+        <view class="vip-reduce">下单返现，分享领红包</view>
+      </view>
+      <view class="d-flex align-items-center info-item">
+        <view class="d-flex align-items-center">
+          <text class="iconfont icon-round_location_fill item-iconfont" />
+          <view class="item-label">广州市 海珠区 怡乐花园怡和阁2202ssssss嗖嗖嗖</view>
+          <view class="item-icon">住宅</view>
+        </view>
+        <text class="iconfont icon-right" />
+      </view>
+      <view class="d-flex align-items-center info-item">
+        <view class="d-flex align-items-center flex-info">
+          <text class="iconfont icon-round_ticket_fill item-iconfont" />
+          <view class="item-label">优惠券</view>
+          <view class="item-right-label">-￥10.0</view>
+        </view>
+        <text class="iconfont icon-right" />
+      </view>
+      <view class="d-flex align-items-center info-item">
+        <view class="d-flex align-items-center flex-info">
+          <text class="iconfont icon-round_pay_fill item-iconfont" />
+          <view class="item-label">返现红包</view>
+          <view class="item-right-label">-￥5.0</view>
+        </view>
+        <text class="iconfont icon-right" />
+      </view>
+    </block>
+
+    <!--推荐商品-->
+    <view class="recommend-list">
+      <view class="d-flex align-items-center shopping-header recommend-header">
+        <view class="vip-tips">推荐商品</view>
+        <view class="vip-reduce">更多新鲜，挑战你舌尖</view>
+      </view>
+      <product-list-card
+        wx:for="{{productList}}"
+        wx:key="{{item.id}}"
+        product="{{item}}"
+      />
+    </view>
+  </view>
+
+  <view class="d-flex align-items-center shopping-footer">
+    <view class="d-flex footer-left" bindtap="checkAll">
+      <text class="iconfont {{checkAll ? 'icon-squarecheckfill' : 'icon-square'}}" />
+      <view class="d-flex flex-column footer-price">
+        <view class="total-label">
+          总价：
+          <text class="price-value">￥{{totalPrice}}</text>
+        </view>
+        <view class="carriage-label">
+          运费：
+          <text class="price-value text-through">￥5.0</text>
+          <text class="item-icon">会员免运费</text>
+        </view>
+      </view>
+    </view>
+    <view class="footer-right">GO</view>
+  </view>
+</block>

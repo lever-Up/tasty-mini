@@ -12,6 +12,7 @@
     "pages/menu/menu",
     "pages/me/me",
     "pages/search/search",
+    "pages/shopping_car/shopping_car",
     "pages/search_result/search_result"
   ],
   "subpackages": [

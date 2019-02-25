@@ -1,0 +1,7 @@
+var count = function (price, num) {
+  return Number(price * num).toFixed(1);
+};
+
+module.exports = {
+  count: count,
+};

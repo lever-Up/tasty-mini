@@ -103,9 +103,4 @@ Page({
       url: `/pages/classify/classify`,
     });
   },
-  navigateToShoppingCar() {
-    wx.navigateTo({
-      url: '/pages/shopping_car/shopping_car'
-    })
-  }
 });
