@@ -27,8 +27,17 @@ Page({
   },
   countPrice(){
     const { products } = this.data;
-    const totalPrice = products.filter(p => p.check)
-      .map(d => d.vipPrice * d.num)
+    const checkProducts = products.filter(p => p.check);
+    if (!checkProducts.length) {
+      wx.nextTick(() => {
+        this.setData({
+          totalPrice: 0,
+        });
+      });
+      return;
+    }
+    const totalPrice = checkProducts
+      .map(({vipPrice, num}) => vipPrice * num)
       .reduce((total, price) => total + price)
       .toFixed(1);
     wx.nextTick(() => {
@@ -38,10 +47,13 @@ Page({
     });
   },
   checkAll() {
-    const { checkAll } = this.data;
+    const { checkAll, products } = this.data;
+
+    products.forEach(d => d.check = !checkAll);
     // 计算价格
     this.setData({
       checkAll: !checkAll,
+      products,
     });
     this.countPrice();
   },
