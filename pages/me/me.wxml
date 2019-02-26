@@ -1,8 +1,12 @@
 <block>
   <view class="position-relative me-info-wrapper" style="padding-top: {{paddingTop}}px">
     <view class="d-flex align-items-center me-info">
-      <image class="me-icon" lazy-load="true" src="http://pic.qqtn.com/up/2017-11/2017110215093888510.jpg"/>
-      <view class="me-name">德胜</view>
+      <view class="me-icon">
+        <open-data type="userAvatarUrl" />
+      </view>
+      <view class="me-name">
+        <open-data type="userNickName" />
+      </view>
       <view class="icon-vip"/>
     </view>
     <view class="d-flex align-items-center me-values">
@@ -53,6 +57,16 @@
       </view>
     </view>
   </view>
+
+  <scroll-view
+          class="ticket-coupon"
+          scroll-x="{{true}}"
+          bindscrolltolower="navigateToTickets"
+  >
+      <view class="ticket-block" wx:for="{{tickets}}" wx:key="{{item.id}}">
+          <ticket-card ticket="{{item}}"/>
+      </view>
+  </scroll-view>
 
   <!--我的服务-->
   <view class="wrapper-card">

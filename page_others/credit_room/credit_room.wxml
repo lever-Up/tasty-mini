@@ -9,10 +9,12 @@
   <view class="credit-room" style="padding-top: {{contentPaddingTop}}px">
     <view class="d-flex align-items-center user-info">
       <view class="d-flex align-items-center">
-        <image class="user-icon" lazy-load="true" src="http://pic.qqtn.com/up/2017-11/2017110215093888510.jpg"/>
+        <view class="user-icon">
+          <open-data type="userAvatarUrl" />
+        </view>
         <view>
           <view class="d-flex align-items-center user-name">
-            <text>德胜</text>
+            <open-data type="userNickName" />
             <text class="icon-vip"/>
           </view>
           <view class="vip-deadline">会员等级V3</view>

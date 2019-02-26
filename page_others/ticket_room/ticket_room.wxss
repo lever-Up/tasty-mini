@@ -1,0 +1,15 @@
+.ticket-block{
+  background: #ffffff;
+  text-align: center;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+}
+.pick-btn{
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #E41919;
+  font-size: 35rpx;
+  letter-spacing: 5rpx;
+  background: linear-gradient(to right, #ffffff, #FFF1F1, #ffffff);
+}

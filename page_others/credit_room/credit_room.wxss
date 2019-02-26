@@ -6,6 +6,7 @@
   padding: 50rpx;
 }
 .user-icon{
+  overflow: hidden;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

@@ -35,7 +35,8 @@
         "vip_room/vip_room",
         "credit_room/credit_room",
         "post/post",
-        "commons/commons"
+        "commons/commons",
+        "ticket_room/ticket_room"
       ]
     }
   ],
@@ -83,5 +84,10 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您的位置，为您派送海里的鲜味"
+    }
   }
 }
