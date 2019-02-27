@@ -84,4 +84,17 @@ Page({
   navigateBack() {
     wx.navigateBack();
   },
+  // 优惠券页
+  navigateToTickets() {
+    wx.navigateTo({
+      url: `/page_others/ticket_room/ticket_room`,
+    });
+  },
+  // 选择收货地址
+  navigateToAddress() {
+    wx.navigateTo({
+      url: `/page_others/address/address`,
+    });
+  },
+
 });

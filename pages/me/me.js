@@ -29,7 +29,13 @@ Page({
   // 优惠券页
   navigateToTickets() {
     wx.navigateTo({
-      url: `/pages_buy/orders/orders?status=${status}`,
+      url: `/page_others/ticket_room/ticket_room`,
     });
-  }
+  },
+  // 收货地址
+  navigateToAddress() {
+    wx.navigateTo({
+      url: `/page_others/address/address`,
+    });
+  },
 });

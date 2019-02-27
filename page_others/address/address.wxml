@@ -1,0 +1,10 @@
+<block>
+  <nav-bar background="#fff" fixed="{{true}}">
+    <view slot="content" class="d-flex">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view>选择地址</view>
+    </view>
+  </nav-bar>
+  <view class="ticket-room" style="padding-top: {{contentPaddingTop}}px">
+  </view>
+</block>

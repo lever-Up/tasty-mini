@@ -56,7 +56,7 @@
         <view class="vip-tips">订单信息</view>
         <view class="vip-reduce">下单返现，分享领红包</view>
       </view>
-      <view class="d-flex align-items-center info-item">
+      <view class="d-flex align-items-center info-item" bindtap="navigateToAddress">
         <view class="d-flex align-items-center">
           <text class="iconfont icon-round_location_fill item-iconfont" />
           <view class="item-label">广州市 海珠区 怡乐花园怡和阁2202ssssss嗖嗖嗖</view>
@@ -64,7 +64,7 @@
         </view>
         <text class="iconfont icon-right" />
       </view>
-      <view class="d-flex align-items-center info-item">
+      <view class="d-flex align-items-center info-item" bindtap="navigateToTickets">
         <view class="d-flex align-items-center flex-info">
           <text class="iconfont icon-round_ticket_fill item-iconfont" />
           <view class="item-label">优惠券</view>
@@ -72,7 +72,7 @@
         </view>
         <text class="iconfont icon-right" />
       </view>
-      <view class="d-flex align-items-center info-item">
+      <view class="d-flex align-items-center info-item" bindtap="navigateToTickets">
         <view class="d-flex align-items-center flex-info">
           <text class="iconfont icon-round_pay_fill item-iconfont" />
           <view class="item-label">返现红包</view>

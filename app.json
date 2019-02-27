@@ -36,6 +36,7 @@
         "credit_room/credit_room",
         "post/post",
         "commons/commons",
+        "address/address",
         "ticket_room/ticket_room"
       ]
     }

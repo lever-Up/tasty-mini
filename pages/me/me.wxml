@@ -94,7 +94,7 @@
         <view class="series-icon waiting-pay-icon" />
         <view>福利积分</view>
       </view>
-      <view class="series-item">
+      <view class="series-item" bindtap="navigateToAddress">
         <view class="series-icon waiting-receive-icon" />
         <view>收货地址</view>
       </view>

@@ -9,7 +9,6 @@
   height: 100rpx;
   line-height: 100rpx;
   color: #E41919;
-  font-size: 35rpx;
   letter-spacing: 5rpx;
   background: linear-gradient(to right, #ffffff, #FFF1F1, #ffffff);
 }

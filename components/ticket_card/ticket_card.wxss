@@ -5,8 +5,10 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 560rpx;
-  margin: 30rpx;
+  width: 500rpx;
+  margin: 20rpx;
+  padding: 10rpx;
+  background-color: #ffffff;
   box-shadow: 2rpx 5rpx 10rpx 0rpx rgba(0, 0, 0, .5);
   border-top-right-radius: 14rpx;
   border-bottom-right-radius: 14rpx;
