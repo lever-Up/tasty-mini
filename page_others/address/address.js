@@ -1,5 +1,5 @@
 import { tickets } from './data';
-import store from '../../store/index';
+import {getLocation} from '../../store/address/action';
 
 Page({
   data:{
@@ -7,7 +7,8 @@ Page({
     tickets,
   },
   onLoad() {
-    console.log(store.getState());
+    const store = getApp().globalData.store;
+    console.log(store.getState())
   },
   navigateBack() {
     wx.navigateBack();

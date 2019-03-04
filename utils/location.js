@@ -13,7 +13,9 @@ export default class QqMapWx {
       lat,
       lng,
       location: (lat && lng) ? `${lat},${lng}` : '',
-      poiOptions: 'policy=2'
+      poiOptions: 'policy=2',
+      keyword: '住宅',
+      coordType: 1,
     };
     this.SDK = new QQMapWX({key: this.config.key});
   }
@@ -22,7 +24,6 @@ export default class QqMapWx {
    * 搜索附近
    * @param:
    *   keyword: string,
-   *   callback: function
    */
   search(keyword) {
     return new Promise((resolve, reject) => {
@@ -32,49 +33,62 @@ export default class QqMapWx {
         address_format: format,
         location,
         success: (res, data) => {
-          console.log('查询附近成功：', res, data);
+          console.log('查询附近成功：', data);
           resolve(res, data);
         },
         fail: (error) => {
-          console.log('查询附近失败：', res, data);
+          console.error('查询附近失败：',error);
           reject(error);
         }
       })
     });
   };
+
+  /**
+   * 查询附近住宅区
+   * @returns {Promise<any>}
+   */
   getSuggestion() {
     return new Promise((resolve, reject) => {
-      const {format, location, region, policy } = this.config;
+      const {format, location, region, policy, keyword } = this.config;
       this.SDK.getSuggestion({
+        keyword,
         policy,
         region,
         location,
+        address_format: format,
         success: (res, data) => {
-          console.log('查询附近成功：', res, data);
-          resolve(res, data);
+          console.log('查询附近成功：', data);
+          resolve(data.suggestSimplify);
         },
         fail: (error) => {
-          console.log('查询附近失败：', error);
+          console.error('查询附近失败：', error);
           reject(error);
         }
       })
     })
   };
+
+  /**
+   * GPS坐标转换地理位置名称
+   * @returns {Promise<any>}
+   */
   reverseGPS() {
     return new Promise(((resolve, reject) => {
-      const {lat, lng, poiOptions} = this.config;
+      const {lat, lng, poiOptions, coordType} = this.config;
       this.SDK.reverseGeocoder({
         location: {
           latitude: lat,
           longitude: lng
         },
+        coord_type: coordType,
         poi_options: poiOptions,
         success: (res, data) => {
           console.log('解析GPS成功：', res, data);
-          resolve(res, data);
+          resolve(data.reverseGeocoderSimplify);
         },
         fail: (error) => {
-          console.log('解析GPS失败：', error);
+          console.error('解析GPS失败：', error);
           reject(error);
         }
       });
