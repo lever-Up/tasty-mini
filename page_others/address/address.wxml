@@ -5,6 +5,9 @@
       <view>选择地址</view>
     </view>
   </nav-bar>
-  <view class="ticket-room" style="padding-top: {{contentPaddingTop}}px">
-  </view>
+  <permission open-type="scope.userLocation">
+    <view slot="content" class="ticket-room" style="padding-top: {{contentPaddingTop}}px">
+      111
+    </view>
+  </permission>
 </block>

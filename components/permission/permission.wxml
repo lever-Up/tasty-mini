@@ -1,0 +1,10 @@
+<block>
+  <view class="setting-guide" wx:if="{{!permission}}">
+    <view class="no-permission" />
+    <view class="no-permission-label">您未开通权限，部分功能无法正常使用~</view>
+    <button type="primary" class="setting-btn" open-type="openSetting" wx:if="{{openType === Permissions.location}}">打开授权设置</button>
+    <button type="primary" class="setting-btn" open-type="getUserInfo" wx:if="{{openType === Permissions.userInfo}}" bindgetuserinfo="getUserInfo">获取用户信息</button>
+    <button type="primary" class="setting-btn" open-type="getUserInfo" wx:if="{{openType === Permissions.userInfo}}" bindgetuserinfo="getUserInfo">获取用户信息</button>
+  </view>
+  <slot name="content" wx:else />
+</block>

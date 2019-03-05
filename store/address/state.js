@@ -10,5 +10,6 @@ export default {
   street_number: '',    // 街道门牌
 
   nears: [],           // 附近
-  adcode: '',
+  adcode: '',          // 邮编
+  gps: false,          // 是否进行gps定位
 }

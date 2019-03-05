@@ -18,12 +18,14 @@ export const getLocation = function () {
             const location = {
               ...local,
               nears,
+              gps: true,
             };
             dispatch(updateUserLocation(location));
             resolve(location);
           })
         },
         fail: (err) => {
+          dispatch(updateUserLocation({gps: false}));
           reject(err);
         }
       })
