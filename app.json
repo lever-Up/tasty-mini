@@ -4,7 +4,9 @@
     "nav-bar": "components/nav_bar/nav_bar",
     "ticket-card": "components/ticket_card/ticket_card",
     "car-button": "components/car_button/car_button",
-    "permission": "components/permission/permission"
+    "permission": "components/permission/permission",
+    "common-dialog": "components/wx_dialog/wx_dialog",
+    "drawer": "components/drawer/drawer"
   },
   "pages":[
     "pages/index/index",

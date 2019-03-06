@@ -12,4 +12,7 @@ export default {
   nears: [],           // 附近
   adcode: '',          // 邮编
   gps: false,          // 是否进行gps定位
+  expires: 1 * 60 * 60 * 1000,  // 有效时间1小时(毫秒)
+  timestamp: Date.now(), // 时间戳
+  updateTime: Date.now() + 1 * 60 * 60 * 1000, // 更新时间
 }

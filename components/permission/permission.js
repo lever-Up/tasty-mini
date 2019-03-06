@@ -1,4 +1,5 @@
 import {getLocation} from '../../store/address/action';
+import {updateUserInfo} from '../../store/user/action';
 
 const Permissions = {
   location: 'scope.userLocation', // 地理位置
@@ -26,11 +27,13 @@ Component({
         success: (res) => {
           const { authSetting } = res;
           if (authSetting[openType]) {
-            this.setData({
-              // permission: true,
-            });
-            const store = getApp().globalData.store;
-            // store.dispatch(getLocation());
+            this.setData({ permission: true });
+            switch (openType) {
+              case Permissions.location:
+                this.getLocation();
+              default:
+                void 0;
+            }
           }
         }
       })
@@ -46,7 +49,13 @@ Component({
   },
   methods: {
     getUserInfo(e) {
-      console.log(e.detail);
+      const { userInfo } = e.detail;
+      const { store } = getApp().globalData;
+      store.dispatch(updateUserInfo(userInfo));
+    },
+    getLocation() {
+      const { store } = getApp().globalData;
+      store.dispatch(getLocation());
     },
   }
 });

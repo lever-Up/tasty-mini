@@ -1,0 +1,30 @@
+var dialogId = '#dialog', dialogContentId = '#dialogContent';
+
+function getInstance(ownerInstance) {
+  return {
+    dialog: ownerInstance.selectComponent(dialogId),
+    content: ownerInstance.selectComponent(dialogContentId),
+  }
+}
+
+var show = function (event, ownerInstance) {
+  console.log(event, ownerInstance);
+};
+
+var close = function (event, ownerInstance) {
+  console.log('close');
+  var dialog = getInstance(ownerInstance).dialog;
+  var content = getInstance(ownerInstance).content;
+  content.addClass('animated slideOutRight');
+  return false;
+};
+
+var none = function() {
+  console.log('void tap');
+};
+
+module.exports = {
+  show: show,
+  close: close,
+  none: none,
+};

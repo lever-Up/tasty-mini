@@ -1,0 +1,8 @@
+<block>
+  <wxs module="WXS" src="./wx_dialog.wxs"></wxs>
+  <view id="dialog" class="wx-dialog" bindtap="{{WXS.close}}">
+    <view class="wx-dialog-content" catchtap="{{WXS.none}}">
+      <slot name="content"></slot>
+    </view>
+  </view>
+</block>

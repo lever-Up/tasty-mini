@@ -1,38 +1,35 @@
-import { tickets } from './data';
+import {commonAddress} from './data';
+import {getLocation} from '../../store/address/action';
+import {rpxToPx} from "../../utils/navbar_tool";
 
 Page({
-  data:{
+  data: {
     contentPaddingTop: getApp().globalData.contentPaddingTop,
-    tickets,
+    rpx190px: rpxToPx(190),
+    commonAddress,
   },
   onLoad() {
-    wx.authorize({
-      scope: 'scope.userLocation',
-      success() {
-        // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-      },
-      fail() {
-        console.log('fail')
-      }
-    })
+    const { store } = getApp().globalData;
+    this.unsubscribe = store.subscribe(() => {
+      const { location } = store.getState();
+      this.setData({
+        location,
+      })
+    });
   },
-  onShow() {
-    const store = getApp().globalData.store;
-    const { location } = store.getState();
-    console.log(location.gps)
+  onUnload() {
+    this.unsubscribe();
+  },
+  getLocation() {
+    const { store } = getApp().globalData;
+    store.dispatch(getLocation(true));
+  },
+  openSlide(e) {
+    const { location, edit } = e.detail;
     this.setData({
-      permission: location.gps,
-    })
-  },
-  openSetting() {
-    wx.openSetting({
-      success(res) {
-        console.log(res.authSetting)
-        res.authSetting = {
-          "scope.userInfo": true,
-          "scope.userLocation": true
-        }
-      }
+      slideVisible: true,
+      slideEdit: !!edit,
+      slideData: location,
     })
   },
   navigateBack() {

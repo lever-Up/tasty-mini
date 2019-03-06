@@ -10,6 +10,9 @@
 .position-absolute{
   position: absolute;
 }
+.position-sticky{
+  position: sticky;
+}
 .align-items-center{
   align-items: center;
 }

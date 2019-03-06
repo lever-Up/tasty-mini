@@ -1,0 +1,20 @@
+@import "../../less/animation.min.wxss";
+.drawer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.7);
+}
+.drawer-content{
+  display: inline-block;
+}
+.drawer-column{
+  height: 100%;
+}
+.drawer-row{
+  width: 100%;
+}
