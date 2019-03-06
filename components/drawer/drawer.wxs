@@ -1,26 +1,36 @@
 var dialogId = '#dialog', dialogContentId = '#dialogContent';
 
-function getInstance(ownerInstance) {
-  return {
-    dialog: ownerInstance.selectComponent(dialogId),
-    content: ownerInstance.selectComponent(dialogContentId),
-  }
-}
-
 var show = function (event, ownerInstance) {
   console.log(event, ownerInstance);
 };
 
 var close = function (event, ownerInstance) {
   console.log('close');
-  var dialog = getInstance(ownerInstance).dialog;
-  var content = getInstance(ownerInstance).content;
+  var dialog = ownerInstance.selectComponent(dialogId);
+  var content = ownerInstance.selectComponent(dialogContentId);
   // 蒙蔽层淡出
+  dialog.removeClass('show');
   dialog.addClass('animated');
   dialog.addClass('fadeOut');
   // 内容飞出
   content.addClass('animated');
   content.addClass('slideOutLeft');
+  return false;
+};
+
+var hide = function (event, ownerInstance) {
+  console.log('hide')
+  var dialog = ownerInstance.selectComponent(dialogId);
+  var content = ownerInstance.selectComponent(dialogContentId);
+  // dialog.addClass('hidden');
+  // 蒙蔽层淡出
+  dialog.removeClass('animated');
+  dialog.removeClass('fadeOut');
+  // 内容飞出
+  content.removeClass('animated');
+  content.removeClass('slideOutLeft');
+  // 更新setData
+  ownerInstance.callMethod('hideDrawer');
   return false;
 };
 
@@ -32,4 +42,5 @@ module.exports = {
   show: show,
   close: close,
   none: none,
+  hide: hide,
 };

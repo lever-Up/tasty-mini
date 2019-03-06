@@ -1,6 +1,12 @@
 /********************** Animation base *****************************/
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}
 .animated {
-  animation-duration: 1s;
+  animation-duration: 500ms;
   animation-fill-mode: both
 }
 /********************** Animation base end *****************************/

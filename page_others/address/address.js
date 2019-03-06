@@ -7,6 +7,7 @@ Page({
     contentPaddingTop: getApp().globalData.contentPaddingTop,
     rpx190px: rpxToPx(190),
     commonAddress,
+    slideVisible: false,
   },
   onLoad() {
     const { store } = getApp().globalData;
@@ -25,7 +26,7 @@ Page({
     store.dispatch(getLocation(true));
   },
   openSlide(e) {
-    const { location, edit } = e.detail;
+    const { location, edit } = e.currentTarget.dataset;
     this.setData({
       slideVisible: true,
       slideEdit: !!edit,

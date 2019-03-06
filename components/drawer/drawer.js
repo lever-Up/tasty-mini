@@ -2,12 +2,29 @@ Component({
   options: {
     multipleSlots: true, // 在组件定义时的选项中启用多slot支持
   },
-  properties: {},
+  properties: {
+    visible: {
+      type: Boolean,
+      value: false,
+      observer(visible) {
+        console.log(visible)
+        if(visible) {
+          const animation = wx.createAnimation({
+            duration: 1000,
+            timingFunction: 'ease',
+          })
+        }
+      }
+    }
+  },
   data: {},
   lifetimes: {},
   methods: {
-    close(e) {
-      console.log(e)
+    hideDrawer(){
+      console.log('hideDrawer')
+      this.setData({
+        visible: false
+      })
     }
   }
 });

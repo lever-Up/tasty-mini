@@ -1,6 +1,6 @@
 <block>
   <wxs module="WXS" src="./drawer.wxs"></wxs>
-  <view id="dialog" class="drawer" bindtap="{{WXS.close}}">
+  <view id="dialog" class="drawer" wx:if="{{visible}}" bindtap="{{WXS.close}}" bindanimationend="{{WXS.hide}}">
     <view id="dialogContent" class="drawer-content drawer-column" catchtap="{{WXS.none}}">
       <slot name="content"></slot>
     </view>
