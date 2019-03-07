@@ -11,7 +11,7 @@ export const commonAddress = [
     street_number: '怡乐西巷',
     user_phone: '17665041232',
     user_name: '王先生',
-    label: '家',
+    tag: 'home',
   }, {
     id: 2,
     latitude: 23.08331,
@@ -24,5 +24,5 @@ export const commonAddress = [
     street_number: '天麓花园',
     user_phone: '17665041232',
     user_name: '苏先生',
-    label: '朋友',
+    tag: 'friend',
   }];

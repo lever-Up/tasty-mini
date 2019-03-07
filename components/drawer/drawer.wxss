@@ -2,15 +2,34 @@
 .drawer{
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1200;
-  overflow: hidden;
+}
+.drawer-mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,.7);
 }
 .drawer-content{
-  display: inline-block;
+  position: fixed;
+  min-width: 500rpx;
+  max-width: 100%;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+.slide-left{
+  left: 0;
+}
+.slide-right{
+  right: 0;
+}
+.slide-top{
+  top: 0;
+}
+.slide-bottom{
+  bottom: 0;
 }
 .drawer-column{
   height: 100%;

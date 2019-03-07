@@ -90,17 +90,79 @@
   margin-right: 15rpx;
   color: salmon;
 }
+.common-location-header{
+  justify-content: space-between;
+}
+.new-address{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: #0aba07;
+  border-radius: 50%;
+}
+.icon-add{
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: bold;
+}
 
-.slide-wrapper{
+.slide-content{
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,.7);
-}
-.slide-content{
   width: 600rpx;
   height: 100%;
   background-color: #ffffff;
+}
+.section{
+  margin: 20rpx 30rpx;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #b3c0d1;
+}
+.last-section{
+  border: none;
+}
+.section-title{
+  color: #b3c0d1;
+  margin-bottom: 20rpx;
+}
+.input-placeholder{
+  color: #7f7f7f;
+}
+.section input{
+  margin-bottom:20rpx;
+  font-size:30rpx;
+  margin-top:10rpx;
+}
+.address-tags{
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+}
+.section label{
+  width: 33%;
+  font-size: 30rpx;
+}
+
+radio .wx-radio-input{
+  height: 40rpx;
+  width: 40rpx;
+}
+.btn-wrapper{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.d-btn{
+  width: 50%;
+  border-radius: 0;
+}
+.phone-btn{
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+  padding: 0;
+}
+.phone-btn::after {
+  border: none
 }

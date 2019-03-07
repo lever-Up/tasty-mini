@@ -1,7 +1,15 @@
 <block>
-  <wxs module="WXS" src="./drawer.wxs"></wxs>
-  <view id="dialog" class="drawer" wx:if="{{visible}}" bindtap="{{WXS.close}}" bindanimationend="{{WXS.hide}}">
-    <view id="dialogContent" class="drawer-content drawer-column" catchtap="{{WXS.none}}">
+  <view class="drawer" wx:if="{{visible}}">
+    <view class="drawer-mask animated {{open ? 'fadeIn' : 'fadeOut'}}"
+           bindtap="close"
+           bindanimationend="hideDrawer"
+           catchtouchmove="voidTap"
+    />
+    <view
+      style="width: {{width}};height: {{height}}"
+      class="drawer-content drawer-column animated {{ModeClass[mode].class}} {{open ? ModeClass[mode].in : ModeClass[mode].out}}"
+      catchtap="voidTap"
+    >
       <slot name="content"></slot>
     </view>
   </view>

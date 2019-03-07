@@ -1,30 +1,69 @@
+const ModeClass = {
+  left: {
+    in: 'slideInLeft',
+    out: 'slideOutLeft',
+    class: 'slide-left',
+  },
+  right: {
+    in: 'slideInRight',
+    out: 'slideOutRight',
+    class: 'slide-right'
+  },
+  top: {
+    in: 'slideInDown',
+    out: 'slideOutUp',
+    class: 'slide-top'
+  },
+  bottom: {
+    in: 'slideInUp',
+    out: 'slideOutDown',
+    class: 'slide-bottom'
+  }
+};
 Component({
   options: {
     multipleSlots: true, // 在组件定义时的选项中启用多slot支持
   },
   properties: {
+    width: String,
+    height: String,
+    direction: String,
+    mode: {
+      type: String,
+      value: 'left'
+    },
     visible: {
       type: Boolean,
       value: false,
       observer(visible) {
-        console.log(visible)
-        if(visible) {
-          const animation = wx.createAnimation({
-            duration: 1000,
-            timingFunction: 'ease',
-          })
-        }
+        this.setData({
+          open: visible,
+        })
       }
     }
   },
-  data: {},
-  lifetimes: {},
+  data: {
+    ModeClass,
+  },
+  lifetimes: {
+  },
   methods: {
-    hideDrawer(){
-      console.log('hideDrawer')
+    close() {
+      this.closeFlag = true;
       this.setData({
-        visible: false
+        open: false,
       })
-    }
+    },
+    hideDrawer(){
+      if(this.closeFlag) {
+        this.setData({
+          visible: false,
+        });
+        this.closeFlag = false;
+      }
+    },
+    voidTap() {
+      return false;
+    },
   }
 });

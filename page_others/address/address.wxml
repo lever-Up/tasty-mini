@@ -11,29 +11,34 @@
       <view class="gps-row position-sticky" style="top: {{contentPaddingTop}}px">
         <view class="d-flex tips-title gps-location" bindtap="getLocation">
           <view class="vip-tips">GPS位置</view>
-          <view class="iconfont icon-refresh" />
+          <view class="iconfont icon-refresh"/>
         </view>
-        <view class="gps-location-info" data-location="{{location}}" bindtap="openSlide">{{location.city}} {{location.district}} {{location.address}}</view>
+        <view class="gps-location-info" data-location="{{location}}" bindtap="openSlide">{{location.city}}
+          {{location.district}} {{location.address}}
+        </view>
       </view>
 
       <!--常用地址-->
       <view class="common-location bg-white position-sticky" style="top: {{contentPaddingTop + rpx190px}}px">
-        <view class="d-flex tips-title">
+        <view class="d-flex tips-title common-location-header" bindtap="openSlide">
           <view class="vip-tips">常用地址</view>
+          <view class="new-address">
+            <text class="iconfont icon-add"/>
+          </view>
         </view>
         <view class="d-flex align-items-center common-address" wx:for="{{commonAddress}}" wx:key="{{item.id}}">
           <view>
             <view class="d-flex align-items-center common-address-label">
-              <text class="iconfont icon-tagfill" />
+              <text class="iconfont icon-tagfill"/>
               <text>{{item.city}} {{item.district}} {{item.address}}</text>
             </view>
             <view class="d-flex align-items-center common-address-connect">
-              <text class="iconfont icon-mobilefill" />
+              <text class="iconfont icon-mobilefill"/>
               <view>{{item.user_name}} {{item.user_phone}}</view>
             </view>
           </view>
 
-          <view class="common-address-edit" data-edit="true" data-location="{{item}}" bindtap="openSlide">
+          <view class="common-address-edit" data-location="{{item}}" bindtap="openSlide">
             <text class="iconfont icon-writefill"/>
           </view>
         </view>
@@ -43,18 +48,62 @@
         <view class="d-flex position-sticky bg-white tips-title" style="top: {{contentPaddingTop}}px">
           <view class="vip-tips">周边地址</view>
         </view>
-        <view class="nearby-location-info" wx:for="{{location.nears}}" wx:key="{{item.id}}" data-location="{{item}}" bindtap="openSlide">
-            <text class="iconfont icon-locationfill"/>
-            <text class="nearby-address-label">{{item.city}} {{item.district}} {{item.address || item.title}}</text>
+        <view class="nearby-location-info" wx:for="{{location.nears}}" wx:key="{{item.id}}" data-location="{{item}}"
+              bindtap="openSlide">
+          <text class="iconfont icon-locationfill"/>
+          <text class="nearby-address-label">{{item.city}} {{item.district}} {{item.address || item.title}}</text>
         </view>
       </view>
 
       <!--侧边弹窗-->
-      <drawer visible="{{slideVisible}}">
+      <drawer visible="{{slideVisible}}" mode="right" height="100%" width="600rpx">
         <view slot="content" class="slide-content" style="padding-top: {{contentPaddingTop}}px">
-          <view>1111</view>
-          <form bindsubmit="formSubmit" bindreset="formReset">
+          <form class="address-from" bindsubmit="formSubmit" bindreset="formReset">
+            <view class="section ">
+              <view class="section-title">收货人：</view>
+              <input name="name" value="{{slideData.user_name}}" placeholder="姓名"/>
+            </view>
 
+            <view class="section">
+              <view class="section-title">联系电话：</view>
+              <view class="position-relative">
+                <button class="phone-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                  <input name="phone" value="{{slideData.user_phone}}" type="number" placeholder="手机号" disabled="true"/>
+                </button>
+              </view>
+            </view>
+            <view class="section ">
+              <view class="section-title">城市：</view>
+              <input name="city" value="广东 广州市" disabled="true"/>
+            </view>
+            <view class="section ">
+              <view class="section-title">收货地址：</view>
+              <input name="address" value="{{slideData.address}}" placeholder="具体地址/街/门牌"/>
+            </view>
+            <view class="section last-section">
+              <view class="section-title">地址标签：</view>
+              <radio-group class="address-tags" name="tag">
+                <label>
+                  <radio value="home" checked="{{slideData.tag === 'home'}}"/>家
+                </label>
+                <label>
+                  <radio value="company" checked="{{slideData.tag === 'company'}}"/>公司
+                </label>
+                <label>
+                  <radio value="friend" checked="{{slideData.tag === 'friend'}}"/>朋友
+                </label>
+                <label>
+                  <radio value="family" checked="{{slideData.tag === 'family'}}"/>亲人
+                </label>
+                <label>
+                  <radio value="lover" checked="{{slideData.tag === 'lover'}}"/>爱人
+                </label>
+              </radio-group>
+            </view>
+            <view class="d-flex btn-wrapper">
+              <button class='d-btn' type="primary" form-type="submit">保 存</button>
+              <button class='d-btn' type="warn" form-type="reset">重 置</button>
+            </view>
           </form>
         </view>
       </drawer>
