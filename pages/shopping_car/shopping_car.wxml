@@ -9,7 +9,7 @@
   <view style="padding-top: {{contentPaddingTop}}px">
     <!--商品信息-->
     <block>
-      <view class="d-flex align-items-center shopping-header">
+      <view class="d-flex align-items-center shopping-header position-sticky" style="top: {{contentPaddingTop}}px">
         <view class="vip-tips">优享会员</view>
         <view class="vip-reduce">会员本单立省9.5元</view>
       </view>
@@ -52,7 +52,7 @@
 
     <!--订单信息-->
     <block>
-      <view class="d-flex align-items-center shopping-header info-header">
+      <view class="d-flex align-items-center shopping-header info-header position-sticky" style="top: {{contentPaddingTop}}px">
         <view class="vip-tips">订单信息</view>
         <view class="vip-reduce">下单返现，分享领红包</view>
       </view>
@@ -84,7 +84,7 @@
 
     <!--推荐商品-->
     <view class="recommend-list">
-      <view class="d-flex align-items-center shopping-header recommend-header">
+      <view class="d-flex align-items-center shopping-header recommend-header position-sticky" style="top: {{contentPaddingTop}}px">
         <view class="vip-tips">推荐商品</view>
         <view class="vip-reduce">更多新鲜，挑战你舌尖</view>
       </view>
