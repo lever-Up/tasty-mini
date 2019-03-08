@@ -1,25 +1,27 @@
 <block>
   <view class="pro-card">
-    <!--浮动图集类-->
-    <view class="float-images" wx:if="{{product.type === CardType.floatImage}}">
-      <include src="./template/float/float_images.wxml"/>
+    <view bindtap="navigateToProductDetail" data-id="{{product.id}}">
+      <!--浮动图集类-->
+      <view class="float-images" wx:if="{{product.type === CardType.floatImage}}">
+        <include src="./template/float/float_images.wxml"/>
+      </view>
+      <!--广告图类-->
+      <block wx:if="{{product.type === CardType.bannerImage}}">
+        <include src="./template/banner/banner_image.wxml"/>
+      </block>
+      <!--图在右类-->
+      <block wx:if="{{product.type === CardType.imageRight}}">
+        <include src="./template/side/image_right.wxml"/>
+      </block>
+      <!--图在左类-->
+      <block wx:if="{{product.type === CardType.imageLeft}}">
+        <include src="./template/side/image_left.wxml"/>
+      </block>
+      <!--图在下列表-->
+      <block wx:if="{{product.type === CardType.imageList}}">
+        <include src="./template/list/image_list.wxml"/>
+      </block>
     </view>
-    <!--广告图类-->
-    <block wx:if="{{product.type === CardType.bannerImage}}">
-      <include src="./template/banner/banner_image.wxml"/>
-    </block>
-    <!--图在右类-->
-    <block wx:if="{{product.type === CardType.imageRight}}">
-      <include src="./template/side/image_right.wxml"/>
-    </block>
-    <!--图在左类-->
-    <block wx:if="{{product.type === CardType.imageLeft}}">
-      <include src="./template/side/image_left.wxml"/>
-    </block>
-    <!--图在下列表-->
-    <block wx:if="{{product.type === CardType.imageList}}">
-      <include src="./template/list/image_list.wxml"/>
-    </block>
 
     <!--商品操作栏-->
     <view class="pro-footer" wx:if="{{type === CardServe.PRODUCTION}}">

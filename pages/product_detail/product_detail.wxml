@@ -1,0 +1,103 @@
+<block>
+  <wxs module="WXS" src="./product_detail.wxs" />
+  <nav-bar fixed="{{true}}" background="{{navBackground}}" color="{{navColor}}">
+    <view slot="content" class="d-flex align-items-center">
+      <view class="iconfont icon-back" bindtap="navigateBack"/>
+      <view wx:for="{{Menus}}"
+            wx:key="{{item.id}}"
+            data-tab="{{item.id}}"
+            bindtap="changeTab"
+            class="tab-title {{currentTab === item.id ? 'tab-title-active' : ''}}"
+      >{{item.name}}
+      </view>
+    </view>
+  </nav-bar>
+  <scroll-view
+    style="height: 100%;"
+    scroll-y="true"
+    bindscrolltolower="loadMoreProducts"
+  >
+    <!--商品详情-->
+    <block>
+      <!--图片加载loading-->
+      <view wx:if="{{imgLoading}}" class="product-images-loading">
+        <view class="iconfont icon-loading"/>
+        <image hidden="true" wx:for="{{images}}" wx:key="*this" src="{{item}}" mode="widthFix" bindload="imageLoaded"/>
+      </view>
+      <view class="position-relative">
+        <swiper wx:if="{{!imgLoading}}"
+                class="product-images-swipe"
+                data-width="{{windowWidth}}"
+                data-imgsize="{{imgSize}}"
+                bindchange='{{WXS.change}}'
+                bindanimationfinish="{{WXS.animationFinish}}"
+                bindtransition="{{WXS.func}}"
+                style="height: {{imgSize[0].height}}px"
+                autoplay="{{false}}"
+        >
+          <block wx:for="{{images}}" wx:key="*this">
+            <swiper-item class="product-item">
+              <image src="{{item}}" class="product-item-image" mode="scaleToFill"/>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="indicator-wrapper">
+          {{productImageIndex}}/{{images.length}}
+        </view>
+      </view>
+
+      <!--商品名称、价格-->
+      <view class="product-info-wrapper">
+        <view class="product-name">
+          <text>大黄鱼（“四大海产”之一）</text>
+          <text>400-500g/条</text>
+        </view>
+        <view class="product-description">
+          <text class="iconfont icon-selectionfill"/>
+          <text>黄鱼含有丰富的蛋白质、微量硒元素和维生素，能清除人体代谢产生的自由基，能延缓衰老，并对体质虚弱、各种癌症有防治功效</text>
+        </view>
+        <view>
+          <text class="product-price">￥49.90</text>
+          <text class="product-unit">/条</text>
+          <text class="product-vip-reduce">会员优惠10元</text>
+        </view>
+      </view>
+    </block>
+
+    <!--菜单、菜品-->
+    <block>
+      <view class="block-header">
+        <text class="iconfont icon-rankfill" />
+        <text class="header-title">菜谱</text>
+        <text class="iconfont icon-rankfill" />
+      </view>
+      <view class="menus-wrapper">
+        <view class="today-menu-item" wx:for="{{menus}}" wx:key="{{item.id}}">
+          <image class="today-menu-item-image" src="{{item.image}}" lazy-load="true" mode="center"/>
+          <view class="today-menu-item-title word-ellipsis">{{item.title}}</view>
+          <view class="menu-suggest">
+            <text>推荐星星：</text>
+          </view>
+          <view class="d-flex align-items-center today-menu-item-flower">
+            <view class="d-flex align-items-center today-menu-item-author">
+              <image class="today-menu-item-authoricon" lazy-load="true" src="{{item.authorIcon}}"/>
+              <text class="today-menu-item-authorname">{{item.author}}</text>
+            </view>
+            <view class="iconfont icon-attentionfavorfill">10503</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--商品评论-->
+    <block>
+      <view class="commons-wrapper">
+
+      </view>
+    </block>
+
+
+    <!--推荐商品-->
+
+  </scroll-view>
+</block>

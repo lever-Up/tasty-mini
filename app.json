@@ -6,17 +6,19 @@
     "car-button": "components/car_button/car_button",
     "permission": "components/permission/permission",
     "common-dialog": "components/wx_dialog/wx_dialog",
-    "drawer": "components/drawer/drawer"
+    "drawer": "components/drawer/drawer",
+    "start": "components/start/start"
   },
   "pages":[
-    "pages/index/index",
-    "pages/classify/classify",
-    "pages/friends/friends",
-    "pages/menu/menu",
     "pages/me/me",
+    "pages/menu/menu",
+    "pages/index/index",
     "pages/search/search",
+    "pages/friends/friends",
+    "pages/classify/classify",
     "pages/shopping_car/shopping_car",
-    "pages/search_result/search_result"
+    "pages/search_result/search_result",
+    "pages/product_detail/product_detail"
   ],
   "subpackages": [
     {

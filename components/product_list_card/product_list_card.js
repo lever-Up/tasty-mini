@@ -20,6 +20,12 @@ Component({
     onChange(event) {
       const { current } = event.detail;
       this.setData({ current });
+    },
+    navigateToProductDetail(e) {
+      const { id } = e.currentTarget.dataset;
+      wx.navigateTo({
+        url: `/pages/product_detail/product_detail?id=${id}`
+      })
     }
   }
 });

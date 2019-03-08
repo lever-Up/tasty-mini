@@ -1,0 +1,178 @@
+.tab-title{
+  font-size: 32rpx;
+  padding: 0 30rpx;
+  letter-spacing: 10rpx;
+}
+.tab-title-active{
+  color: #E41919;
+}
+.tab-title-active::after{
+  content: '';
+  display: block;
+  background-color: #E41919;
+  width: 100%;
+  height: 5rpx;
+  border-radius: 2rpx;
+}
+
+/* 商品详情 */
+.product-images-loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600rpx;
+  background-color: rgba(0,0,0,.8);
+}
+.icon-loading{
+  font-size: 50rpx;
+  color: #E41919;
+  animation: rotating .8s linear infinite;
+}
+@keyframes rotating {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.product-images-swipe{
+  width: 100%
+}
+.product-item{
+  height: 100%;
+}
+.product-item-image{
+  width: 100%;
+  height: 100%;
+}
+.indicator-wrapper{
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+  width: 40rpx;
+  border-radius: 20rpx;
+  background-color: #7f7f7f;
+  color: #ffffff;
+  padding: 5rpx 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.product-info-wrapper{
+  background-color: #ffffff;
+  padding: 20rpx 30rpx;
+}
+.product-name{
+  font-size: 34rpx;
+  font-weight: bold;
+  margin: 10rpx 0 20rpx;
+}
+.icon-selectionfill{
+  color: #ff6633;
+  margin-right: 10rpx;
+}
+.product-description{
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color: #B0B0B0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
+  margin-bottom: 20rpx;
+}
+.product-price{
+  font-family: Gobold;
+  color: #E41919;
+  font-size: 34rpx;
+  margin-right: 15rpx;
+}
+.product-unit{
+  font-size: 28rpx;
+}
+.product-vip-reduce{
+  margin-left: 20rpx;
+  font-weight: bold;
+  text-align: center;
+  padding:2rpx 6rpx;
+  border-radius: 4rpx;
+  background: linear-gradient(to right, #ffffff, #FFF1F1);
+  font-size: 18rpx;
+  color: #E41919;
+  line-height: 32rpx;
+}
+
+.block-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.header-title{
+  margin: 0 25rpx;
+  letter-spacing: 10rpx;
+}
+.block-header .icon-rankfill{
+  color: #FFF1F1;
+}
+.word-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+}
+
+/* 菜谱 */
+.menus-wrapper{
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0 0 20rpx 30rpx;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.today-menu-item{
+  display: inline-block;
+  width: 338rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  background-color: #f5f5f5;
+  /*box-shadow: 0 0 20rpx rgba(0, 0, 0, .5);*/
+}
+.today-menu-item-image{
+  width: 100%;
+  height: 200rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.today-menu-item-title{
+  margin: 10rpx 20rpx 40rpx 20rpx;
+  font-size: 24rpx;
+}
+.today-menu-item-flower{
+  padding: 0 20rpx 30rpx;
+  justify-content: space-between;
+}
+.today-menu-item-authoricon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.today-menu-item-authorname{
+  font-size: 20rpx;
+  color: #2A2A2A;
+}
+.icon-attentionfavorfill{
+  font-size: 20rpx;
+  color: #676767;
+}
+
+/* 评论 */
+
